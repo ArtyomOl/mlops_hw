@@ -1,0 +1,57 @@
+{
+  "version": "v2",
+  "seed": 42,
+  "group_key": "topic",
+  "groups_total": 875,
+  "sizes": {
+    "train": 1421,
+    "val": 178,
+    "test": 178
+  },
+  "groups": {
+    "train": 692,
+    "val": 83,
+    "test": 100
+  },
+  "ratios_actual": {
+    "train": 0.7997,
+    "val": 0.1002,
+    "test": 0.1002
+  },
+  "contamination": {
+    "train/val": {
+      "id_overlap": 0,
+      "text_overlap": 0,
+      "group_overlap": 0,
+      "near_dup_pairs": 0,
+      "examples": {
+        "id": [],
+        "group": [],
+        "near_dup": []
+      }
+    },
+    "train/test": {
+      "id_overlap": 0,
+      "text_overlap": 0,
+      "group_overlap": 0,
+      "near_dup_pairs": 0,
+      "examples": {
+        "id": [],
+        "group": [],
+        "near_dup": []
+      }
+    },
+    "val/test": {
+      "id_overlap": 0,
+      "text_overlap": 0,
+      "group_overlap": 0,
+      "near_dup_pairs": 0,
+      "examples": {
+        "id": [],
+        "group": [],
+        "near_dup": []
+      }
+    }
+  },
+  "seconds": 0.37
+}

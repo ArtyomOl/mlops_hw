@@ -1,0 +1,8 @@
+__pycache__/
+.venv/
+dvc_remote/
+data/
+.uv-cache/
+*.bak
+*.orig
+sources/qasper-train-dev-v0.3.tgz

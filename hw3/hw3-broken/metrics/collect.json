@@ -1,0 +1,11 @@
+{
+  "version": "v2",
+  "source_files": 2,
+  "groups": 903,
+  "system_prompt_variants": 5,
+  "questions_scanned": 3598,
+  "rows_written": 1940,
+  "dropped_non_extractive": 1630,
+  "dropped_span_mismatch": 23,
+  "dropped_no_evidence": 5
+}

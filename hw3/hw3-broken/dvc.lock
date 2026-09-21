@@ -1,0 +1,283 @@
+schema: '2.0'
+stages:
+  collect:
+    cmd: python -m src.collect
+    deps:
+    - path: sources/qasper-dev-v0.3.json
+      hash: md5
+      md5: 4f84dda1d35efa352abe58cb7bb0beba
+      size: 11398686
+    - path: sources/qasper-train-v0.3.json
+      hash: md5
+      md5: 2bcb7a50f0d2606f2d15403dc49c60b2
+      size: 31969387
+    - path: src/collect.py
+      hash: md5
+      md5: cb276f73bf5727ccd93393a59dcdc9e0
+      size: 5020
+    - path: src/config.py
+      hash: md5
+      md5: d763c1abf17ee815068f2f36ec096169
+      size: 1434
+    params:
+      params.yaml:
+        collect:
+          version: v2
+          sources:
+            v1:
+            - sources/qasper-train-v0.3.json
+            v2:
+            - sources/qasper-train-v0.3.json
+            - sources/qasper-dev-v0.3.json
+          verify_answer_span: true
+          system_prompts:
+          - Answer the question about the NLP paper using only the supplied 
+            evidence. Give the exact answer span; do not add unsupported facts.
+          - Read the excerpt from an NLP research paper. Reply to the question 
+            with the answer stated in that excerpt, without speculation.
+          - Use the provided passage to answer the research question. Return 
+            only the relevant text span from the paper.
+          - Find the answer in the evidence from the NLP paper. Keep the 
+            response concise and grounded in the quoted passage.
+          - You are checking facts in an NLP paper. Answer from the given 
+            evidence only, using the wording of the source.
+        paths.metrics_collect: metrics/collect.json
+        paths.raw: data/raw.jsonl
+    outs:
+    - path: data/raw.jsonl
+      hash: md5
+      md5: 6b1ecf8c496805e665551fe4a443e939
+      size: 2615567
+    - path: metrics/collect.json
+      hash: md5
+      md5: d606404c1187834a3786cd557d488eaf
+      size: 237
+  clean:
+    cmd: python -m src.clean
+    deps:
+    - path: data/raw.jsonl
+      hash: md5
+      md5: 6b1ecf8c496805e665551fe4a443e939
+      size: 2615567
+    - path: src/clean.py
+      hash: md5
+      md5: 244eed4f6b922d940c078d0da1fc8cd6
+      size: 4396
+    - path: src/config.py
+      hash: md5
+      md5: d763c1abf17ee815068f2f36ec096169
+      size: 1434
+    - path: src/dedup.py
+      hash: md5
+      md5: 8ebc1568ef98fbf792c5661dc62f61d8
+      size: 3160
+    - path: src/pii.py
+      hash: md5
+      md5: 0f7959643e064aa542a3d42f545ed0cc
+      size: 1885
+    - path: src/schema.py
+      hash: md5
+      md5: ad834fcb5caa483d3d5d5bfabb433cc0
+      size: 3054
+    - path: src/stats.py
+      hash: md5
+      md5: a54925032eff4769647b5775d72dd423
+      size: 2222
+    - path: src/textnorm.py
+      hash: md5
+      md5: 539836040622d321b21318471eaa6a4e
+      size: 1934
+    params:
+      params.yaml:
+        clean:
+          min_user_chars: 30
+          max_user_chars: 4000
+          min_assistant_chars: 2
+          near_dup:
+            enabled: true
+            shingle_words: 4
+            num_perm: 64
+            threshold: 0.85
+          pii:
+            enabled: true
+        paths.clean: data/clean.jsonl
+        paths.metrics_clean: metrics/clean.json
+        paths.raw: data/raw.jsonl
+    outs:
+    - path: data/clean.jsonl
+      hash: md5
+      md5: a46684536cb797ff369914ce0af1ecc4
+      size: 2389210
+    - path: metrics/clean.json
+      hash: md5
+      md5: 457f46a856bd64c9e7972c0326b38f9e
+      size: 450
+  diversity:
+    cmd: python -m src.diversity
+    deps:
+    - path: data/clean.jsonl
+      hash: md5
+      md5: a46684536cb797ff369914ce0af1ecc4
+      size: 2389210
+    - path: src/config.py
+      hash: md5
+      md5: d763c1abf17ee815068f2f36ec096169
+      size: 1434
+    - path: src/diversity.py
+      hash: md5
+      md5: 46a28db57ff41cd12b79330bf9683470
+      size: 6474
+    - path: src/schema.py
+      hash: md5
+      md5: ad834fcb5caa483d3d5d5bfabb433cc0
+      size: 3054
+    - path: src/stats.py
+      hash: md5
+      md5: a54925032eff4769647b5775d72dd423
+      size: 2222
+    - path: src/textnorm.py
+      hash: md5
+      md5: 539836040622d321b21318471eaa6a4e
+      size: 1934
+    params:
+      params.yaml:
+        diversity:
+          min_examples: 1000
+          min_system_prompts: 3
+          min_groups: 50
+          max_group_share: 0.1
+          min_answer_len_ratio: 1.6
+          max_same_length_share: 0.25
+          max_duplicate_answer_share: 0.3
+        paths.clean: data/clean.jsonl
+        paths.metrics_diversity: metrics/diversity.json
+        split.group_key: topic
+    outs:
+    - path: metrics/diversity.json
+      hash: md5
+      md5: 288da0f95ea7563c14fa52e7155ea860
+      size: 649
+  split:
+    cmd: python -m src.split
+    deps:
+    - path: data/clean.jsonl
+      hash: md5
+      md5: a46684536cb797ff369914ce0af1ecc4
+      size: 2389210
+    - path: metrics/diversity.json
+      hash: md5
+      md5: 288da0f95ea7563c14fa52e7155ea860
+      size: 649
+    - path: src/config.py
+      hash: md5
+      md5: d763c1abf17ee815068f2f36ec096169
+      size: 1434
+    - path: src/contamination.py
+      hash: md5
+      md5: 7f7c451b548cf948310d2a31056ea10e
+      size: 2139
+    - path: src/dedup.py
+      hash: md5
+      md5: 8ebc1568ef98fbf792c5661dc62f61d8
+      size: 3160
+    - path: src/schema.py
+      hash: md5
+      md5: ad834fcb5caa483d3d5d5bfabb433cc0
+      size: 3054
+    - path: src/split.py
+      hash: md5
+      md5: 424bc79f96aae667ac2ae0a7cd7dce79
+      size: 3888
+    - path: src/textnorm.py
+      hash: md5
+      md5: 539836040622d321b21318471eaa6a4e
+      size: 1934
+    params:
+      params.yaml:
+        clean.near_dup:
+          enabled: true
+          shingle_words: 4
+          num_perm: 64
+          threshold: 0.85
+        contamination:
+          threshold: 0.85
+        paths.metrics_split: metrics/split.json
+        paths.test: data/test.jsonl
+        paths.train: data/train.jsonl
+        paths.val: data/val.jsonl
+        split:
+          group_key: topic
+          ratios:
+            train: 0.8
+            val: 0.1
+            test: 0.1
+          seed: 42
+    outs:
+    - path: data/test.jsonl
+      hash: md5
+      md5: 8037cbebd05228e505bf9f49224de423
+      size: 239978
+    - path: data/train.jsonl
+      hash: md5
+      md5: 2b95a312a0ef1e0f96606bab7ae08bb6
+      size: 1913780
+    - path: data/val.jsonl
+      hash: md5
+      md5: 2ca3501d898b4d75f499bfacea4bf800
+      size: 235452
+    - path: metrics/split.json
+      hash: md5
+      md5: 0fa205cf45874cf8ed4243640483801c
+      size: 1000
+  contamination:
+    cmd: python scripts/check_contamination.py
+    deps:
+    - path: data/test.jsonl
+      hash: md5
+      md5: 8037cbebd05228e505bf9f49224de423
+      size: 239978
+    - path: data/train.jsonl
+      hash: md5
+      md5: 2b95a312a0ef1e0f96606bab7ae08bb6
+      size: 1913780
+    - path: data/val.jsonl
+      hash: md5
+      md5: 2ca3501d898b4d75f499bfacea4bf800
+      size: 235452
+    - path: scripts/check_contamination.py
+      hash: md5
+      md5: 9e2214fb6dcb15cd53e3583cce9117f1
+      size: 2113
+      isexec: true
+    - path: src/config.py
+      hash: md5
+      md5: d763c1abf17ee815068f2f36ec096169
+      size: 1434
+    - path: src/contamination.py
+      hash: md5
+      md5: 7f7c451b548cf948310d2a31056ea10e
+      size: 2139
+    - path: src/dedup.py
+      hash: md5
+      md5: 8ebc1568ef98fbf792c5661dc62f61d8
+      size: 3160
+    - path: src/schema.py
+      hash: md5
+      md5: ad834fcb5caa483d3d5d5bfabb433cc0
+      size: 3054
+    - path: src/textnorm.py
+      hash: md5
+      md5: 539836040622d321b21318471eaa6a4e
+      size: 1934
+    params:
+      params.yaml:
+        clean.near_dup:
+          enabled: true
+          shingle_words: 4
+          num_perm: 64
+          threshold: 0.85
+        contamination:
+          threshold: 0.85
+        paths.test: data/test.jsonl
+        paths.train: data/train.jsonl
+        paths.val: data/val.jsonl
