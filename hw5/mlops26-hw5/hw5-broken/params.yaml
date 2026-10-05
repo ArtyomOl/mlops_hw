@@ -1,0 +1,78 @@
+# Единственная точка конфигурации ДЗ 5. В src/ нет ни имени модели,
+# ни learning rate, ни путей.
+model:
+  name: "Qwen/Qwen3-0.6B"
+  device: "auto"            # auto | cpu | cuda | mps
+  # Базовые веса в bfloat16: они заморожены, точность им не нужна, а память
+  # и время уходят вдвое. Сами матрицы LoRA peft держит в float32 — там идут
+  # крошечные обновления AdamW. На старом CPU без bf16 ставьте float32.
+  dtype: "bfloat16"
+  enable_thinking: false    # как в ДЗ 4: шаблон должен совпадать с обучением
+
+data:
+  # Выход стадии tokenize из соседнего проекта ДЗ 4.
+  train: "../../../hw4/hw4-broken/data/tokenized/train.pt"
+  val: "../../../hw4/hw4-broken/data/tokenized/val.pt"
+
+lora:
+  r: 8
+  alpha: 16                 # итоговый масштаб апдейта alpha / r = 2
+  dropout: 0.05
+  # Только проекции внимания и MLP. embed_tokens и lm_head — это 155 млн
+  # параметров каждый; в modules_to_save они уезжают в адаптер целиком.
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+train:
+  seed: 42
+  epochs: 1
+  batch_size: 2
+  grad_accum: 4             # эффективный батч = 8: память как у батча 2, шаг как у батча 8
+  lr: 2.0e-4
+  warmup_ratio: 0.03
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  eval_every: 10            # шагов оптимизатора между замерами val loss
+  # Логиты на весь словарь: 2 примера x 512 токенов x 151 936 x 4 байта = 0,6 ГБ.
+  # Батч 8 на оценке — уже 2,5 ГБ одних логитов, и ноутбук уходит в своп.
+  eval_batch_size: 2
+  gradient_checkpointing: true   # без него на ноутбуке с 16–32 ГБ не влезает
+  max_steps: null           # null — по эпохам; число — обрезать (smoke-тесты)
+
+# Эксперимент по слоям: второй прогон без адаптеров на первых N слоях.
+variants:
+  - name: "all_layers"
+    freeze_first: 0
+  - name: "freeze14"
+    freeze_first: 14
+
+compare:
+  max_new_tokens: 40
+  # Пять фиксированных вопросов из val-набора своего датасета ДЗ 4.
+  prompts:
+    - |-
+      Paper: Annotating and normalizing biomedical NEs with limited knowledge
+      Evidence: In this paper, in spite of previous statements, we present a system that uses rule-based and dictionary-based methods combined (in a way we prefer to call resource-based). Our final goals in the paper are two-fold: on the one hand, to describe our system, developed for the PharmaCoNER shared task, dealing with the annotation of some of the nes in health records (namely, pharmacological, chemical and biomedical entities) using a revisited version of rule- and dictionary-based approaches; and, on the other hand, to give pause for thought about the quality of datasets (and, thus, the fairness) with which systems of this type are evaluated, and to highlight the key role of resource-based systems in the validation and consolidation of both the annotation guidelines and the human annotation practices.
+      Question: What does their system consist of?
+    - |-
+      Paper: Follow Alice into the Rabbit Hole: Giving Dialogue Agents Understanding of Human Level Attributes.
+      Evidence: TV Tropes defines tropes as attributes of storytelling that the audience recognizes and understands. We use tropes as HLAs to calculate correlations with specific target characters. We collect data from numerous characters from a variety of TV shows, movies, and anime. We filter and keep characters with at least five HLA, as those with fewer are not complex enough to be correctly modeled due to reasons such as lack of data. We end up eliminating 5.86% of total characters, and end up with 45,821 characters and 12,815 unique HLA, resulting in 945,519 total character-HLA pairs. Each collected character has 20.64 HLAs on average. See Figure FIGREF1 for an example character and their HLAs.
+      Question: How many different characters were in dataset?
+    - |-
+      Paper: Follow Alice into the Rabbit Hole: Giving Dialogue Agents Understanding of Human Level Attributes.
+      Evidence: We compare against four dialogue system baselines: Kvmemnn, Feed Yourself, Poly-encoder, and a BERT bi-ranker baseline trained on the Persona-Chat dataset using the same training hyperparameters (including learning rate scheduler and length capping settings) described in Section SECREF20. For the first three models, we use the provided pretrained (on Persona-Chat) models. We evaluate all four on our five evaluation characters discussed in Section SECREF28.
+      Question: What baseline models are used?
+    - |-
+      Paper: Shallow reading with Deep Learning: Predicting popularity of online content using only its title
+      Evidence: contains 4090 posts with associated videos from NowThisNews Facebook page collected between 07/2015 and 07/2016. For each post we collected its title and the number of views of the corresponding video, which we consider our popularity metric. Due to a fairly lengthy data collection process, we decided to normalize our data by first grouping posts according to their publication month and then labeling the posts for which the popularity metric exceeds the median monthly value as popular, the remaining part as unpopular.
+      Question: Where do they obtain the news videos from?
+    - |-
+      Paper: How Far are We from Effective Context Modeling ? An Exploratory Study on Semantic Parsing in Context
+      Evidence: In this paper, we try to fulfill the above insufficiency via an exploratory study on real-world semantic parsing in context. Concretely, we present a grammar-based decoding semantic parser and adapt typical context modeling methods on top of it. Through experiments on two large complex cross-domain datasets, SParC BIBREF2 and CoSQL BIBREF6, we carefully compare and analyze the performance of different context modeling methods. Our best model achieves state-of-the-art (SOTA) performances on both datasets with significant improvements. Furthermore, we summarize and generalize the most frequent contextual phenomena, with a fine-grained analysis on representative models. Through the analysis, we obtain some interesting findings, which may benefit the community on the potential research directions. We will open-source our code and materials to facilitate future work upon acceptance.
+      Question: What two large datasets are used for evaluation?
+  system: "Read the excerpt from an NLP research paper. Reply to the question with the answer stated in that excerpt, without speculation."
+
+paths:
+  models: "models"
+  metrics: "metrics"
+  curves: "docs/curves.png"
+  compare: "docs/compare.md"
