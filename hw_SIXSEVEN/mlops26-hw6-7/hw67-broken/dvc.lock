@@ -1,0 +1,60 @@
+schema: '2.0'
+stages:
+  prepare_eval:
+    cmd: python -m evaluation.prepare_data
+    deps:
+    - path: ../../../hw3/hw3-broken/data/test.jsonl
+      hash: md5
+      md5: 8037cbebd05228e505bf9f49224de423
+      size: 239978
+    - path: ../../../hw3/hw3-broken/data/train.jsonl
+      hash: md5
+      md5: 2b95a312a0ef1e0f96606bab7ae08bb6
+      size: 1913780
+    - path: ../../../hw4/hw4-broken/data/tokenized/train.pt
+      hash: md5
+      md5: 48085c1e7528d53255937bd7a41305d4
+      size: 3705697
+    - path: ../../../hw4/hw4-broken/data/tokenized/val.pt
+      hash: md5
+      md5: 232414bfa406faffebce00dfb798b876
+      size: 449045
+    - path: ../../../hw4/hw4-broken/data/train.jsonl
+      hash: md5
+      md5: 2b95a312a0ef1e0f96606bab7ae08bb6
+      size: 1913780
+    - path: ../../../hw4/hw4-broken/data/val.jsonl
+      hash: md5
+      md5: 2ca3501d898b4d75f499bfacea4bf800
+      size: 235452
+    - path: ../../../hw4/hw4-broken/params.yaml
+      hash: md5
+      md5: beaf77c3c6de3b0e8a9fc3c4127b2591
+      size: 1918
+    - path: ../../../hw4/hw4-broken/src
+      hash: md5
+      md5: 180e49536881cfc7287cc3a38ae9dd1a.dir
+      size: 62266
+      nfiles: 12
+    - path: evaluation/contract.py
+      hash: md5
+      md5: 6d83ad5e8bb53684534075d606f8e519
+      size: 3357
+    - path: evaluation/curated.py
+      hash: md5
+      md5: 2e8a42cd202a6c2ce45150a59427b552
+      size: 19109
+    - path: evaluation/data_params.json
+      hash: md5
+      md5: 0aae6b775a1589b1872298890d16c748
+      size: 586
+    - path: evaluation/prepare_data.py
+      hash: md5
+      md5: cbe2de0e8d7a1c11d31589f773415a15
+      size: 8636
+    outs:
+    - path: data/eval
+      hash: md5
+      md5: 0f05a00ab538d1b20c4d2978d42dfeb3.dir
+      size: 1531262
+      nfiles: 5

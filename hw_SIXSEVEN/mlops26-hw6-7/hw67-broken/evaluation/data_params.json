@@ -1,0 +1,13 @@
+{
+  "source_train": "../../../hw3/hw3-broken/data/train.jsonl",
+  "source_golden": "../../../hw3/hw3-broken/data/test.jsonl",
+  "tokenization_train": "../../../hw4/hw4-broken/data/train.jsonl",
+  "tokenization_val": "../../../hw4/hw4-broken/data/val.jsonl",
+  "tokenized_train": "../../../hw4/hw4-broken/data/tokenized/train.pt",
+  "tokenized_val": "../../../hw4/hw4-broken/data/tokenized/val.pt",
+  "tokenization_params": "../../../hw4/hw4-broken/params.yaml",
+  "tokenization_code": "../../../hw4/hw4-broken/src",
+  "model": "Qwen/Qwen3-0.6B",
+  "seed": 42,
+  "output": "data/eval"
+}

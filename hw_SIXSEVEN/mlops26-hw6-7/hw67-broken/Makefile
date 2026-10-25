@@ -1,0 +1,52 @@
+.PHONY: install up down sweep promote predict check check-storage
+install:
+	uv sync --frozen
+up:
+	docker compose -p mlops-hw6 up --build -d --wait
+down:
+	docker compose -p mlops-hw6 down
+sweep:
+	uv run python -m src.sweep
+promote:
+	uv run python -m evaluation.cli promote
+predict:
+	uv run python -m src.predict --uri models:/my-qwen-adapter@champion --prompt "Evidence: We evaluate the tagger using macro F1. Question: Which metric is used?"
+check:
+	bash tests/check.sh
+check-storage:
+	uv run python tests/check_storage.py
+
+.PHONY: report candidate baseline-init evaluate eval check-eval check-negative check-all baseline-update predict-candidate
+.PHONY: prepare-eval protocol conclusion
+.PHONY: submission
+.PHONY: finalize
+finalize:
+	uv run python -m scripts.finalize_reports
+submission:
+	uv run python scripts/export_submission.py
+prepare-eval:
+	uv run python -m evaluation.prepare_data
+protocol:
+	uv run python -m evaluation.protocol
+conclusion:
+	uv run python -m evaluation.report
+report:
+	uv run python -m src.report
+candidate:
+	uv run python -m evaluation.cli candidate
+baseline-init:
+	uv run python -m evaluation.cli baseline-init
+evaluate:
+	uv run python -m evaluation.cli evaluate
+eval:
+	uv run python -m evaluation.cli gate
+check-eval:
+	uv run python -m unittest discover -s tests -p 'test_*.py' -v
+	uv run python -m unittest evaluation.test_solution_extra -v
+check-negative:
+	uv run python -m evaluation.cli negative
+check-all: check check-eval
+baseline-update:
+	uv run python -m evaluation.cli baseline-update
+predict-candidate:
+	uv run python -m src.predict --uri models:/my-qwen-adapter@candidate --prompt "Evidence: We evaluate the tagger using macro F1. Question: Which metric is used?"

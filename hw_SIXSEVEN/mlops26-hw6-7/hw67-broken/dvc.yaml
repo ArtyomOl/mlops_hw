@@ -1,0 +1,20 @@
+# Выполняется в DVC-репозитории, корень которого — общий mlops_hw.
+# Зависимости с ../../../ остаются внутри общего репозитория ДЗ 3–7.
+stages:
+  prepare_eval:
+    cmd: python -m evaluation.prepare_data
+    deps:
+      - evaluation/prepare_data.py
+      - evaluation/curated.py
+      - evaluation/data_params.json
+      - evaluation/contract.py
+      - ../../../hw3/hw3-broken/data/train.jsonl
+      - ../../../hw3/hw3-broken/data/test.jsonl
+      - ../../../hw4/hw4-broken/data/train.jsonl
+      - ../../../hw4/hw4-broken/data/val.jsonl
+      - ../../../hw4/hw4-broken/data/tokenized/train.pt
+      - ../../../hw4/hw4-broken/data/tokenized/val.pt
+      - ../../../hw4/hw4-broken/params.yaml
+      - ../../../hw4/hw4-broken/src
+    outs:
+      - data/eval

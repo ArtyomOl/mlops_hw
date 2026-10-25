@@ -1,0 +1,13 @@
+{
+  "docker_compose_binary": "/opt/homebrew/bin/docker-compose",
+  "docker_config_for_this_session": "/private/tmp/mlops-hw67-docker",
+  "podman_machine": "podman-machine-default",
+  "compatibility_fixes": [
+    "Compose подключён через временный DOCKER_CONFIG без изменения глобального Docker config.",
+    ".dockerignore исключает окружение и данные из build context.",
+    "Healthcheck использует CMD-SHELL с сохранением quoting Python -c.",
+    "Именованные volumes используют :Z: SELinux relabel при пересоздании контейнера."
+  ],
+  "evaluation_history": "metrics/evaluation-history содержит прежние ответы, протоколы и код до исправления логирования и генератора отчёта. Модели, prompt, scorer, данные и пороги не менялись.",
+  "state": "candidate доступен; champion не назначен; отказ по качеству — штатный итог работы"
+}
