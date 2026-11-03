@@ -1,0 +1,815 @@
+{
+  "overall": {
+    "n": 50,
+    "correct": 49,
+    "valid": 50,
+    "errors": 0,
+    "accuracy": 0.98,
+    "format_rate": 1.0
+  },
+  "slices": {
+    "dataset": {
+      "n": 20,
+      "correct": 20,
+      "valid": 20,
+      "errors": 0,
+      "accuracy": 1.0,
+      "format_rate": 1.0
+    },
+    "method": {
+      "n": 15,
+      "correct": 15,
+      "valid": 15,
+      "errors": 0,
+      "accuracy": 1.0,
+      "format_rate": 1.0
+    },
+    "metric": {
+      "n": 5,
+      "correct": 5,
+      "valid": 5,
+      "errors": 0,
+      "accuracy": 1.0,
+      "format_rate": 1.0
+    },
+    "numeric": {
+      "n": 10,
+      "correct": 9,
+      "valid": 10,
+      "errors": 0,
+      "accuracy": 0.9,
+      "format_rate": 1.0
+    }
+  },
+  "per_item": [
+    {
+      "id": "qasper-mcq-001",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-002",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-003",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-004",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-005",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-006",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-007",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-008",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-009",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-010",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-011",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-012",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "metric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-013",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-014",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-015",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-016",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-017",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-018",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-019",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-020",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-021",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-022",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-023",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "metric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-024",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-025",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-026",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "metric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-027",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-028",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-029",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-030",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-031",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-032",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-033",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-034",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-035",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-036",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-037",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-038",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "metric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-039",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-040",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-041",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-042",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-043",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-044",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-045",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-046",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "metric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-047",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "method"
+      ]
+    },
+    {
+      "id": "qasper-mcq-048",
+      "raw": "{\"answer\":\"C\"}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "dataset"
+      ]
+    },
+    {
+      "id": "qasper-mcq-049",
+      "raw": "{\"answer\":\"A\"}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    },
+    {
+      "id": "qasper-mcq-050",
+      "raw": "{\"answer\":\"B\"}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "numeric"
+      ]
+    }
+  ],
+  "status": "complete",
+  "model": {
+    "kind": "base",
+    "name": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca"
+  },
+  "protocol_sha256": "9b24b74004709dba55a0cecb9c60b146fd5fcb62711aee86db8d7bf59fa90b7d",
+  "golden_sha256": "509e13831ca4be5f6dcc1186caa15634206d1701558079558dc07f03a5d7c69f",
+  "baseline_spec_sha256": "f71269b95f6b4e1e160fa25e9af6c973517cfebad15880b75b56c8184680b163",
+  "behavioral": {
+    "overall": {
+      "n": 4,
+      "correct": 3,
+      "valid": 4,
+      "errors": 0,
+      "accuracy": 0.75,
+      "format_rate": 1.0
+    },
+    "slices": {
+      "behavior": {
+        "n": 4,
+        "correct": 3,
+        "valid": 4,
+        "errors": 0,
+        "accuracy": 0.75,
+        "format_rate": 1.0
+      },
+      "format": {
+        "n": 1,
+        "correct": 1,
+        "valid": 1,
+        "errors": 0,
+        "accuracy": 1.0,
+        "format_rate": 1.0
+      },
+      "paraphrase": {
+        "n": 1,
+        "correct": 1,
+        "valid": 1,
+        "errors": 0,
+        "accuracy": 1.0,
+        "format_rate": 1.0
+      },
+      "refusal": {
+        "n": 2,
+        "correct": 1,
+        "valid": 2,
+        "errors": 0,
+        "accuracy": 0.5,
+        "format_rate": 1.0
+      }
+    },
+    "per_item": [
+      {
+        "id": "behavior-format",
+        "raw": "{\"answer\":\"A\"}",
+        "parsed": {
+          "answer": "A"
+        },
+        "valid": true,
+        "correct": true,
+        "error": null,
+        "slices": [
+          "behavior",
+          "format"
+        ]
+      },
+      {
+        "id": "behavior-paraphrase",
+        "raw": "{\"answer\":\"A\"}",
+        "parsed": {
+          "answer": "A"
+        },
+        "valid": true,
+        "correct": true,
+        "error": null,
+        "slices": [
+          "behavior",
+          "paraphrase"
+        ]
+      },
+      {
+        "id": "behavior-refusal",
+        "raw": "{\"answer\":\"A\"}",
+        "parsed": {
+          "answer": "A"
+        },
+        "valid": true,
+        "correct": false,
+        "error": null,
+        "slices": [
+          "behavior",
+          "refusal"
+        ]
+      },
+      {
+        "id": "behavior-missing-evidence",
+        "raw": "{\"answer\":\"REFUSE\"}",
+        "parsed": {
+          "answer": "REFUSE"
+        },
+        "valid": true,
+        "correct": true,
+        "error": null,
+        "slices": [
+          "behavior",
+          "refusal"
+        ]
+      }
+    ]
+  },
+  "leakage": {
+    "exact_or_group_intersections": 0,
+    "n_train_index": 1421,
+    "n_golden": 50,
+    "n_behavioral": 4
+  },
+  "outputs_sha256": "a64ffc2668f9c54ccae6f1fd16fbb4d534086d75c6b8ef46d9a3fff375614f9d",
+  "evaluation_run_id": "aa00d482199544e1aa299cf11aa31d68"
+}

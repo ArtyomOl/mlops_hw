@@ -1,0 +1,27 @@
+{
+  "evaluation_run_id": "aa00d482199544e1aa299cf11aa31d68",
+  "golden_sha256": "509e13831ca4be5f6dcc1186caa15634206d1701558079558dc07f03a5d7c69f",
+  "leakage": {
+    "exact_or_group_intersections": 0,
+    "n_behavioral": 4,
+    "n_golden": 50,
+    "n_train_index": 1421
+  },
+  "metrics": {
+    "accuracy": 0.0,
+    "format_rate": 0.0
+  },
+  "model_id": "94a484907fdd4275ab911cb26b7eec06",
+  "model_sha256": "91e7a3d67c013f67ff45697668a14aabe2babdd3fcf97069d28fa4df34d9e337",
+  "passed": false,
+  "protocol_sha256": "9b24b74004709dba55a0cecb9c60b146fd5fcb62711aee86db8d7bf59fa90b7d",
+  "reason": "Регрессия общей accuracy",
+  "runtime_sha256": "6872fb5b67b6d18b875aa182c74a4c0ae80ccda3443f4482d31ea7e42a2f8cd9",
+  "sources": {
+    "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/inputs67/metrics/baseline-eval.json": "57088fb4301d6be40b33f9f63c372e53dcc706ea1b583134eb0535c9db6bef97",
+    "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/inputs67/metrics/baseline-outputs.json": "c898e0aa46e57468ad4504cf227442f4eef479cc224316eecae4eedfc7280395",
+    "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/inputs67/metrics/candidate-eval.json": "fc19e853740fd698e330037f66ee0dd52aefda1d2e1b5001de573dd04b93c448",
+    "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/inputs67/metrics/candidate-outputs.json": "4eea428651f06c1c643d0ff97bd91d6e91fffe4d7760ac6325158777f4427419"
+  },
+  "status": "complete"
+}

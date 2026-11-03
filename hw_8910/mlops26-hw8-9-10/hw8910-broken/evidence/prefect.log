@@ -1,0 +1,86 @@
+### init exit=0
+Создан синтетический стенд: /var/folders/81/ymjq4cz14gjdqc3jvh9mj3bh0000gn/T/tmpkizjg0kv/lab
+
+
+### failure exit=1
+15:11:56.033 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8740
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+15:11:59.499 | INFO    | Flow run 'resilient-coua' - Beginning flow run 'resilient-coua' for flow 'release-flow'
+15:11:59.508 | INFO    | Task run 'prepare-8d9' - PREPARED 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
+15:11:59.509 | INFO    | Task run 'prepare-8d9' - Finished in state Completed()
+15:12:00.510 | ERROR   | Flow run 'resilient-coua' - Encountered exception during execution: RuntimeError('Injected failure after preparation')
+Traceback (most recent call last):
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flow_engine.py", line 1330, in run_context
+    yield self
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flow_engine.py", line 2111, in run_flow_sync
+    engine.call_flow_fn()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flow_engine.py", line 1350, in call_flow_fn
+    result = call_with_parameters(self.flow.fn, self.parameters)
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/flow.py", line 113, in release_flow
+    if fail_after_prepare: raise RuntimeError('Injected failure after preparation')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Injected failure after preparation
+15:12:00.547 | INFO    | Flow run 'resilient-coua' - Finished in state Failed('Flow run encountered an exception: RuntimeError: Injected failure after preparation')
+Traceback (most recent call last):
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/flow.py", line 121, in <module>
+    release_flow(str(a.workspace.resolve()),a.report,a.fail_after_prepare,a.fail_after_publish,a.real)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flows.py", line 1887, in __call__
+    return run_flow(
+        flow=self,
+    ...<2 lines>...
+        return_type=return_type,
+    )
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flow_engine.py", line 2268, in run_flow
+    ret_val = run_flow_sync(**kwargs)
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flow_engine.py", line 2113, in run_flow_sync
+    return engine.state if return_type == "state" else engine.result()
+                                                       ~~~~~~~~~~~~~^^
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flow_engine.py", line 788, in result
+    raise self._raised
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flow_engine.py", line 1330, in run_context
+    yield self
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flow_engine.py", line 2111, in run_flow_sync
+    engine.call_flow_fn()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/flow_engine.py", line 1350, in call_flow_fn
+    result = call_with_parameters(self.flow.fn, self.parameters)
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/.venv/lib/python3.13/site-packages/prefect/utilities/callables/__init__.py", line 404, in call_with_parameters
+    return fn(*args, **kwargs)
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_8910/mlops26-hw8-9-10/hw8910-broken/flow.py", line 113, in release_flow
+    if fail_after_prepare: raise RuntimeError('Injected failure after preparation')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Injected failure after preparation
+15:12:00.559 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8740
+
+
+### recovery exit=0
+15:12:02.017 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8061
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+15:12:03.422 | INFO    | Flow run 'augmented-alpaca' - Beginning flow run 'augmented-alpaca' for flow 'release-flow'
+15:12:03.433 | INFO    | Task run 'prepare-946' - Finished in state Cached(type=COMPLETED)
+15:12:03.434 | INFO    | Task run 'artifact-1df' - Read existing artifact; no training performed: model-B.txt
+15:12:03.434 | INFO    | Task run 'artifact-1df' - Finished in state Completed()
+15:12:03.435 | INFO    | Task run 'gate-a87' - Finished in state Completed()
+15:12:03.440 | INFO    | Task run 'publish-8ac' - PUBLISHED fixture-B
+15:12:03.442 | INFO    | Task run 'publish-8ac' - Finished in state Completed()
+15:12:04.434 | INFO    | Flow run 'augmented-alpaca' - Finished in state Completed()
+15:12:04.447 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8061
+
+
+### changed input exit=0
+15:12:05.956 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8401
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+15:12:07.268 | INFO    | Flow run 'quick-grebe' - Beginning flow run 'quick-grebe' for flow 'release-flow'
+15:12:07.277 | INFO    | Task run 'prepare-584' - PREPARED 689acc4da2427981af4788a35fae3f5bef2213b56afef896b1bdabf0fa5b7290
+15:12:07.278 | INFO    | Task run 'prepare-584' - Finished in state Completed()
+15:12:07.279 | INFO    | Task run 'artifact-848' - Read existing artifact; no training performed: model-B.txt
+15:12:07.279 | INFO    | Task run 'artifact-848' - Finished in state Completed()
+15:12:07.280 | INFO    | Task run 'gate-21f' - Finished in state Completed()
+15:12:07.284 | INFO    | Task run 'publish-06a' - PUBLISHED fixture-B
+15:12:07.287 | INFO    | Task run 'publish-06a' - Finished in state Completed()
+15:12:08.279 | INFO    | Flow run 'quick-grebe' - Finished in state Completed()
+15:12:08.291 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8401

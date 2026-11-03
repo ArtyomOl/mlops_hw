@@ -1,0 +1,326 @@
+[
+  {
+    "id": "qasper-mcq-001",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.21827345801284537
+  },
+  {
+    "id": "qasper-mcq-002",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.22989341701031663
+  },
+  {
+    "id": "qasper-mcq-003",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.15478929100208916
+  },
+  {
+    "id": "qasper-mcq-004",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.2085296669974923
+  },
+  {
+    "id": "qasper-mcq-005",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.20235358300851658
+  },
+  {
+    "id": "qasper-mcq-006",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.21637587499571964
+  },
+  {
+    "id": "qasper-mcq-007",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.17469283399987034
+  },
+  {
+    "id": "qasper-mcq-008",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.18449329200666398
+  },
+  {
+    "id": "qasper-mcq-009",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.16969879099633545
+  },
+  {
+    "id": "qasper-mcq-010",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.16895537500386126
+  },
+  {
+    "id": "qasper-mcq-011",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.17404720798367634
+  },
+  {
+    "id": "qasper-mcq-012",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.20911908301059157
+  },
+  {
+    "id": "qasper-mcq-013",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.18285358298453502
+  },
+  {
+    "id": "qasper-mcq-014",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.22628866700688377
+  },
+  {
+    "id": "qasper-mcq-015",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.21884512499673292
+  },
+  {
+    "id": "qasper-mcq-016",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.1654892080114223
+  },
+  {
+    "id": "qasper-mcq-017",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.2031252499727998
+  },
+  {
+    "id": "qasper-mcq-018",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.17902562499511987
+  },
+  {
+    "id": "qasper-mcq-019",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.17420795798534527
+  },
+  {
+    "id": "qasper-mcq-020",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.20256879201042466
+  },
+  {
+    "id": "qasper-mcq-021",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.16729120799573138
+  },
+  {
+    "id": "qasper-mcq-022",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.2571379159926437
+  },
+  {
+    "id": "qasper-mcq-023",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.20577229198534042
+  },
+  {
+    "id": "qasper-mcq-024",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.20055883398163132
+  },
+  {
+    "id": "qasper-mcq-025",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.16697883300366811
+  },
+  {
+    "id": "qasper-mcq-026",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.18494387497776188
+  },
+  {
+    "id": "qasper-mcq-027",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.19879604200832546
+  },
+  {
+    "id": "qasper-mcq-028",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.174517042003572
+  },
+  {
+    "id": "qasper-mcq-029",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.20105224999133497
+  },
+  {
+    "id": "qasper-mcq-030",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.19163920800201595
+  },
+  {
+    "id": "qasper-mcq-031",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.17024679097812623
+  },
+  {
+    "id": "qasper-mcq-032",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.16149774999939837
+  },
+  {
+    "id": "qasper-mcq-033",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.21336100000189617
+  },
+  {
+    "id": "qasper-mcq-034",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.17387704201973975
+  },
+  {
+    "id": "qasper-mcq-035",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.17282354200142436
+  },
+  {
+    "id": "qasper-mcq-036",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.1623662499769125
+  },
+  {
+    "id": "qasper-mcq-037",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.1614571250102017
+  },
+  {
+    "id": "qasper-mcq-038",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.1845212909975089
+  },
+  {
+    "id": "qasper-mcq-039",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.2549798340187408
+  },
+  {
+    "id": "qasper-mcq-040",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.17027883301489055
+  },
+  {
+    "id": "qasper-mcq-041",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.22995066599105485
+  },
+  {
+    "id": "qasper-mcq-042",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.1721459580003284
+  },
+  {
+    "id": "qasper-mcq-043",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.22805233299732208
+  },
+  {
+    "id": "qasper-mcq-044",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.2190648750110995
+  },
+  {
+    "id": "qasper-mcq-045",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.16038708400446922
+  },
+  {
+    "id": "qasper-mcq-046",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.1962542920082342
+  },
+  {
+    "id": "qasper-mcq-047",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.19933595901238732
+  },
+  {
+    "id": "qasper-mcq-048",
+    "raw": "C",
+    "error": null,
+    "latency_seconds": 0.2242056249815505
+  },
+  {
+    "id": "qasper-mcq-049",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.18585512498975731
+  },
+  {
+    "id": "qasper-mcq-050",
+    "raw": "B",
+    "error": null,
+    "latency_seconds": 0.17261312500340864
+  },
+  {
+    "id": "behavior-format",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.1909635410120245
+  },
+  {
+    "id": "behavior-paraphrase",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.1851705419830978
+  },
+  {
+    "id": "behavior-refusal",
+    "raw": "A",
+    "error": null,
+    "latency_seconds": 0.12636583400308155
+  },
+  {
+    "id": "behavior-missing-evidence",
+    "raw": "REFUSE",
+    "error": null,
+    "latency_seconds": 0.17296537500806153
+  }
+]

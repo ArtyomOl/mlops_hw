@@ -1,0 +1,9 @@
+{
+  "answer": "A",
+  "output_tokens": 2,
+  "generation_seconds": 1.2065679589868523,
+  "model_id": "94a484907fdd4275ab911cb26b7eec06",
+  "runtime_sha256": "6872fb5b67b6d18b875aa182c74a4c0ae80ccda3443f4482d31ea7e42a2f8cd9",
+  "passed_gate": false,
+  "note": "isolated loading test; rejected candidate is not served"
+}

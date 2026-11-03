@@ -1,0 +1,27 @@
+{
+  "passed": false,
+  "reason": "Регрессия общей accuracy",
+  "sources": {
+    "metrics/baseline-eval.json": {
+      "path": "/Users/artyom-olenev/Projects/mlops_hw/hw_SIXSEVEN/mlops26-hw6-7/hw67-broken/metrics/baseline-eval.json",
+      "sha256": "57088fb4301d6be40b33f9f63c372e53dcc706ea1b583134eb0535c9db6bef97"
+    },
+    "metrics/candidate-eval.json": {
+      "path": "/Users/artyom-olenev/Projects/mlops_hw/hw_SIXSEVEN/mlops26-hw6-7/hw67-broken/metrics/candidate-eval.json",
+      "sha256": "fc19e853740fd698e330037f66ee0dd52aefda1d2e1b5001de573dd04b93c448"
+    },
+    "metrics/baseline-outputs.json": {
+      "path": "/Users/artyom-olenev/Projects/mlops_hw/hw_SIXSEVEN/mlops26-hw6-7/hw67-broken/metrics/baseline-outputs.json",
+      "sha256": "c898e0aa46e57468ad4504cf227442f4eef479cc224316eecae4eedfc7280395"
+    },
+    "metrics/candidate-outputs.json": {
+      "path": "/Users/artyom-olenev/Projects/mlops_hw/hw_SIXSEVEN/mlops26-hw6-7/hw67-broken/metrics/candidate-outputs.json",
+      "sha256": "4eea428651f06c1c643d0ff97bd91d6e91fffe4d7760ac6325158777f4427419"
+    },
+    "docs/protocol.json": {
+      "path": "/Users/artyom-olenev/Projects/mlops_hw/hw_SIXSEVEN/mlops26-hw6-7/hw67-broken/docs/protocol.json",
+      "sha256": "76bad34790e915af804ead7f0d0f39cd7418353c63c4aa2a0f4b66475df379fc"
+    }
+  },
+  "evaluation_run_id": "aa00d482199544e1aa299cf11aa31d68"
+}

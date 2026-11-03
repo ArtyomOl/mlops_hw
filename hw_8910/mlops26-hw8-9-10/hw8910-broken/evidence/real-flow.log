@@ -1,0 +1,16 @@
+15:12:22.926 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8830
+See https://docs.prefect.io/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+15:12:24.239 | INFO    | Flow run 'busy-shellfish' - Beginning flow run 'busy-shellfish' for flow 'release-flow'
+15:12:24.259 | INFO    | Task run 'prepare_real-29d' - Finished in state Cached(type=COMPLETED)
+15:12:25.543 | INFO    | Task run 'real_artifact-c47' - Existing training run 94a484907fdd4275ab911cb26b7eec06, no training; artifact hash 91e7a3d67c013f67ff45697668a14aabe2babdd3fcf97069d28fa4df34d9e337
+15:12:25.545 | INFO    | Task run 'real_artifact-c47' - Finished in state Completed()
+15:12:25.586 | INFO    | Task run 'real_gate-260' - QUALITY_GATE passed=False reason=Регрессия общей accuracy
+15:12:25.588 | INFO    | Task run 'real_gate-260' - Finished in state Completed()
+15:12:25.591 | INFO    | Task run 'real_publish-ff2' - REJECTED: accepted pointer unchanged
+15:12:25.594 | INFO    | Task run 'real_publish-ff2' - Finished in state Completed()
+15:12:26.251 | INFO    | Flow run 'busy-shellfish' - Finished in state Completed()
+15:12:26.277 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8830
+
+exit_code=0
+accepted_sha256_before=43f23a8ad233a6b9e455024ba09f125cf64bd82ac399d743c031eab857ca34d0
+accepted_sha256_after=43f23a8ad233a6b9e455024ba09f125cf64bd82ac399d743c031eab857ca34d0
