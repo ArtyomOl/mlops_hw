@@ -3,6 +3,7 @@
 from collections import Counter, defaultdict
 from datetime import datetime
 from html import escape
+from io import StringIO
 import json
 from pathlib import Path
 from statistics import median
@@ -14,6 +15,12 @@ CHARTS = RESULTS / 'charts'
 sys.path.insert(0, str(ROOT))
 from load.summarize import summary
 
+INK = '#25352d'
+PAPER = '#f8f6ed'
+GREEN = '#2b6b58'
+AMBER = '#995329'
+INDIGO = '#514880'
+
 
 def read_json(path, default=None):
     return json.loads(path.read_text()) if path.is_file() else default
@@ -23,18 +30,32 @@ def read_lines(path):
     return [json.loads(line) for line in path.read_text().splitlines() if line] if path.is_file() else []
 
 
-def figure(name, title, plot):
+def figure(name, title, plot, *, height=4.6):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
-    fig, ax = plt.subplots(figsize=(10.5, 4.5), layout='constrained')
-    ax.set_title(title, fontsize=14, fontweight='bold', loc='left')
-    ax.grid(axis='y', color='#d9dee5', alpha=.7)
-    plot(ax)
-    CHARTS.mkdir(exist_ok=True, parents=True)
+    style = {
+        'figure.facecolor': PAPER, 'axes.facecolor': PAPER,
+        'axes.edgecolor': '#aea997', 'axes.labelcolor': INK, 'text.color': INK,
+        'xtick.color': INK, 'ytick.color': INK,
+        'axes.spines.top': False, 'axes.spines.right': False, 'axes.axisbelow': True,
+        'grid.color': '#ddd9ca', 'grid.linewidth': .8,
+        'legend.facecolor': PAPER, 'legend.framealpha': 1, 'legend.edgecolor': '#d0cbb8',
+        'legend.fancybox': False, 'svg.hashsalt': 'hw11-report',
+    }
+    with matplotlib.rc_context(style):
+        fig, ax = plt.subplots(figsize=(10.5, height), layout='constrained')
+        try:
+            ax.set_title(title, fontsize=15, fontweight='bold', loc='left', pad=12)
+            ax.grid(axis='y')
+            plot(ax)
+            svg = StringIO()
+            fig.savefig(svg, format='svg', metadata={'Date': None})
+        finally:
+            plt.close(fig)
     filename = CHARTS / f'{name}.svg'
-    fig.savefig(filename, facecolor='white')
-    plt.close(fig)
+    CHARTS.mkdir(exist_ok=True, parents=True)
+    filename.write_text('\n'.join(line.rstrip() for line in svg.getvalue().splitlines()) + '\n')
     return f'<img src="{filename.relative_to(ROOT)}" alt="{escape(title)}">'
 
 
@@ -76,8 +97,9 @@ def evidence_a():
     requests = {name:read_lines(directory/f'{name}.jsonl') for name in (
         'early','correct','rollout','rollout-long','rollout-version','bad-B','rollback-version','kill-stream','kill-service')}
     def plot(ax):
-        palette = {'early':'#bb432a', 'correct':'#16796a', 'rollout':'#356cb3'}
-        for stage in palette:
+        phases = {'early': ('До правки', AMBER), 'correct': ('После правки', GREEN),
+                  'rollout': ('Rollout', INDIGO)}
+        for stage, (label, color) in phases.items():
             samples = [v for v in times if v['phase'] == stage and 'pods' in v]
             if not samples:
                 continue
@@ -88,21 +110,22 @@ def evidence_a():
                 return {p['pod'] for p in row['pods'] if p.get('created') and
                         datetime.fromisoformat(p['created']).timestamp() >= int(t0)}
             ax.step(x, [sum(p['ready'] and p['pod'] in new_pods(r) for p in r['pods']) for r in samples],
-                    where='post',color=palette[stage],alpha=.75,label=f'{stage}: новые Ready')
+                    where='post', color=color, linewidth=1.8, label=f'{label}: Ready')
             ax.step(x, [sum(e.get('ready',False) and e['pod'] in new_pods(r) for e in r['endpoints'])
-                        for r in samples], color=palette[stage], alpha=.55, linestyle=':', where='post',
-                    label=f'{stage}: новые endpoints')
+                        for r in samples], color=color, linestyle=':', linewidth=1.5, where='post',
+                    label=f'{label}: endpoints')
             if stage == 'rollout' and requests['rollout-long']:
                 row = requests['rollout-long'][0]
                 if row.get('first_wall_s'):
                     ax.plot([row['first_wall_s']-t0,row['completed_wall_s']-t0],[.3,.3],
-                            linewidth=5,color='#563b8b',label='Длительный поток')
+                            linewidth=3, color=INDIGO, marker='|', label='Длительный поток')
             elif stage == 'early':
                 cold = [r['actual_wall_s']-t0 for r in requests[stage] if r.get('warmed') is False]
-                ax.scatter(cold,[.55]*len(cold),marker='x',color=palette[stage],label='Запрос при прогреве')
-        ax.axvline(0,color='#202d3f',linestyle='--',linewidth=1)
-        ax.set(xlabel='Секунды от начала соответствующего обновления', ylabel='Реплики / endpoints', ylim=(0,3.4))
-        ax.legend(loc='best', fontsize=8, ncols=2)
+                ax.scatter(cold, [.55]*len(cold), marker='x', s=17, color=color, label='Холодный запрос')
+        ax.axvline(0, color=INK, linestyle='--', linewidth=.9, alpha=.6)
+        ax.set(xlabel='Время от начала обновления, с', ylabel='Новые реплики / endpoints',
+               yticks=[0, 1, 2, 3], ylim=(0, 3.3))
+        ax.legend(loc='upper right', fontsize=8.5, ncols=2)
     checks = table(['Проверка', 'Результат'], [(k, 'PASS' if v else 'FAIL') for k,v in result['checks'].items()])
     figs = figure('a-rollout','Прогрев 20 с и rolling update под запросами',plot)
     text = f'''<p>Дефектный режим: {result['early_cold']} запросов приняли до конца прогрева из {result['early_requests']}.
@@ -148,17 +171,27 @@ def evidence_b():
         selected = [t for t in trials if t['trial']['profile']=='skew80']
         labels, values, queues = [], [], []
         for trial in selected:
+            policy = 'ClientIP' if trial['trial']['policy'] == 'affinity' else 'Обычный'
+            repeat = trial['trial']['trial'].rsplit('-', 1)[-1]
             pods = sorted(trial['by_pod'].values(),key=lambda pod:pod['planned'],reverse=True)
             for rank, pod in enumerate(pods):
-                labels.append(f"{trial['trial']['trial'].replace('-skew80','')}\nPod {rank+1} (N={pod['planned']})")
-                values.append(pod['ttfc_ms']['p95'] or 0)
-                queues.append(pod['queue_ms']['p95'] or 0)
-        x = range(len(labels))
-        ax.bar([i-.2 for i in x], values, width=.40,label='TTFC p95',color='#356cb3')
-        ax.bar([i+.2 for i in x], queues, width=.40,label='Очередь p95',color='#cf6541')
-        ax.set(xlabel='Прогоны skew80 и Pod по убыванию трафика',ylabel='мс',xticks=list(x),xticklabels=labels)
-        ax.tick_params(axis='x',labelsize=7)
-        ax.legend()
+                labels.append(f"{policy} {repeat} · Pod {rank+1} · N={pod['planned']}")
+                values.append(pod['ttfc_ms']['p95'])
+                queues.append(pod['queue_ms']['p95'])
+        rows = list(range(len(labels)))
+        for results, offset, caption, color, hatch in (
+            (values, -.19, 'TTFC p95', GREEN, None),
+            (queues, .19, 'Очередь p95', AMBER, '///'),
+        ):
+            present = [(row+offset, value) for row, value in zip(rows, results) if value is not None]
+            ax.barh([row for row, _ in present], [value for _, value in present], height=.32,
+                    label=caption, color=color if hatch is None else PAPER, edgecolor=color, hatch=hatch)
+        ax.set(xlabel='Задержка успешных запросов, мс  ·  N — всего попыток', yticks=rows, yticklabels=labels)
+        ax.invert_yaxis()
+        ax.tick_params(axis='y', labelsize=9, length=0)
+        ax.grid(False, axis='y')
+        ax.grid(True, axis='x')
+        ax.legend(loc='lower right')
     def plot_policy(ax):
         for i, profile in enumerate(('uniform','skew80')):
             for j, policy in enumerate(('ordinary','affinity')):
@@ -169,9 +202,10 @@ def evidence_b():
                 p95 = [t['all']['ttfc_ms']['p95'] for t in trials_in_group if t['all']['ttfc_ms']['p95'] is not None]
                 if not p95:
                     continue
-                color = ('#356cb3','#cf6541')[j]
-                ax.bar(x,median(p95),width=.3,color=color,alpha=.55,label=policy if i==0 else None)
-                ax.scatter([x+.07*(k-(len(p95)-1)/2) for k in range(len(p95))],p95,color=color,zorder=3)
+                color, label, marker = (GREEN, 'Обычный Service', 'o') if j==0 else (AMBER, 'ClientIP', 'D')
+                ax.bar(x, median(p95), width=.28, color=color, alpha=.28, label=label if i==0 else None)
+                ax.scatter([x+.07*(k-(len(p95)-1)/2) for k in range(len(p95))], p95,
+                           color=color, marker=marker, s=36, edgecolors=PAPER, linewidths=.8, zorder=3)
         ax.set(xlabel='Профиль нагрузки и политика (столбец — медиана p95, точка — прогон)',
                ylabel='Клиентский TTFC p95, мс',xticks=[0,1],xticklabels=['Равномерно','80% через один IP'])
         ax.legend()
@@ -181,7 +215,8 @@ def evidence_b():
         for pod, data in sorted(trial['by_pod'].items()):
             per_pod.append((trial['trial']['trial'],pod,data['planned'], data['completed'], data['rejected'],
                             data['queue_ms']['p95'],data['ttfc_ms']['p95'],data['cache_hits'],data['cache_misses']))
-    plots = figure('b-pods','Хвост задержки и ожидание по репликам',plot_breakdown) + figure('b-policy','Политики Service при одинаковом расписании',plot_policy)
+    plots = (figure('b-pods', 'Задержка и очередь по репликам', plot_breakdown, height=5.25)
+             + figure('b-policy', 'Политики Service при одинаковом расписании', plot_policy))
     ready = sum(t['trial'].get('duration_s',0)>=120 for t in trials)
     headline = f'<p>Завершены {len(trials)} из 12 серий. Серий длительностью не менее 120 с: {ready}.</p>'
     aggregate = []
@@ -235,28 +270,31 @@ def evidence_c():
         cpu = [next((item.get('resource',{}).get('current',{}).get('averageUtilization')
                      for item in row['hpa'].get('currentMetrics',[]) if item.get('type') == 'Resource'), None)
                for row in timeline]
-        ax.step(x,ready,where='post',label='Ready',color='#16796a')
-        ax.step(x,desired,where='post',linestyle=':',label='Желаемые HPA',color='#356cb3')
-        ax.set(xlabel='Секунды от начала наблюдения',ylabel='Количество реплик',ylim=(0.8,3.5))
+        ax.step(x, ready, where='post', label='Ready', color=GREEN, linewidth=2.2)
+        ax.step(x, desired, where='post', linestyle=':', label='Желаемые HPA', color=INDIGO, linewidth=1.7)
+        ax.set(xlabel='Время от начала наблюдения, с', ylabel='Реплики', yticks=[1, 2, 3], ylim=(0.8, 3.5))
         traffic = ax.twinx()
         for index, phase in enumerate(phases):
             start = phase['start_at_unix_s']-begin
             end = phase['stop_dispatch_at_unix_s']-begin
-            traffic.plot([start,end],[phase['rps']]*2,color='#cf6541',linewidth=3,
+            traffic.plot([start,end],[phase['rps']]*2,color=AMBER,linewidth=2.2,
                          label='Расписание, запрос/с' if index==0 else None)
         if sent:
             bins = range(int((timeline[-1]['ts_wall_s']-begin)//5)+1)
-            traffic.plot([5*i+2.5 for i in bins],[sent[i]/5 for i in bins],color='#8a4931',
-                         linewidth=1,linestyle='--',label='Фактически отправлено, окна 5 с')
-        traffic.set(ylabel='Нагрузка, запрос/с',ylim=(0,30))
+            traffic.plot([5*i+2.5 for i in bins],[sent[i]/5 for i in bins],color=AMBER,
+                         linewidth=1.2, linestyle='--', label='Отправлено, среднее за 5 с')
+        traffic.set(ylabel='Нагрузка, запрос/с', ylim=(0,30))
+        traffic.yaxis.label.set_color(AMBER)
+        traffic.tick_params(axis='y', colors=AMBER)
         lines, labels = ax.get_legend_handles_labels()
         extra, extra_labels = traffic.get_legend_handles_labels()
         ax.legend(lines+extra,labels+extra_labels,loc='upper left',fontsize=8)
         if any(v is not None for v in cpu):
             inset = ax.inset_axes([0.69,0.12,0.29,0.27])
-            inset.plot(x,cpu,color='#795582',linewidth=1)
-            inset.axhline(60,linestyle=':',color='#aaa')
-            inset.set_title('CPU HPA, % request',fontsize=8); inset.tick_params(labelsize=7)
+            inset.plot(x, cpu, color=INDIGO, linewidth=1.3)
+            inset.axhline(60, linestyle=':', color=INK, linewidth=.8)
+            inset.set_title('CPU HPA, % от запроса', fontsize=9, loc='left')
+            inset.tick_params(labelsize=7)
 
     transitions = [(field,r['phase'],r['ts_wall_s']-begin,r['replicas'])
                    for field in ('desired','ready') for r in observations.get(f'{field}_changes',[])]
