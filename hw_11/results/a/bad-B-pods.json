@@ -1,0 +1,271 @@
+[
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "annotations": {
+        "checksum/config": "be34fbb6d31da56370a86a5532e14faf1fabc67d7e2a43dc074810aedab2a07f",
+        "hw11/image-id": "",
+        "hw11/model-version": "B",
+        "hw11/probe-mode": "correct"
+      },
+      "creationTimestamp": "2026-11-16T16:17:14Z",
+      "generateName": "hw11-a-56b478d6dd-",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "hw11-a",
+        "app.kubernetes.io/name": "hw11",
+        "pod-template-hash": "56b478d6dd"
+      },
+      "name": "hw11-a-56b478d6dd-hhxtc",
+      "namespace": "hw11-a",
+      "ownerReferences": [
+        {
+          "apiVersion": "apps/v1",
+          "blockOwnerDeletion": true,
+          "controller": true,
+          "kind": "ReplicaSet",
+          "name": "hw11-a-56b478d6dd",
+          "uid": "f69f59b3-7917-4a54-baac-af9d3b724983"
+        }
+      ],
+      "resourceVersion": "2501",
+      "uid": "96da95b3-6b89-43eb-a36c-d6df10033d93"
+    },
+    "spec": {
+      "automountServiceAccountToken": false,
+      "containers": [
+        {
+          "env": [
+            {
+              "name": "MODEL_PATH",
+              "value": "/srv/models/B.json"
+            },
+            {
+              "name": "MODEL_SHA256",
+              "value": "858eb906358c4477636ad068844d68a77682823f012066d5e13973bc13965771"
+            },
+            {
+              "name": "POD_NAME",
+              "valueFrom": {
+                "fieldRef": {
+                  "apiVersion": "v1",
+                  "fieldPath": "metadata.name"
+                }
+              }
+            }
+          ],
+          "envFrom": [
+            {
+              "configMapRef": {
+                "name": "hw11-a-config"
+              }
+            }
+          ],
+          "image": "hw11:dev",
+          "imagePullPolicy": "Never",
+          "lifecycle": {
+            "preStop": {
+              "exec": {
+                "command": [
+                  "python",
+                  "-c",
+                  "import time\nfrom urllib.request import Request, urlopen\ntime.sleep(3)\nwith urlopen(Request(\"http://127.0.0.1:8080/drain\", method=\"POST\"), timeout=2):\n    pass\n"
+                ]
+              }
+            }
+          },
+          "livenessProbe": {
+            "failureThreshold": 3,
+            "httpGet": {
+              "path": "/health",
+              "port": "http",
+              "scheme": "HTTP"
+            },
+            "periodSeconds": 5,
+            "successThreshold": 1,
+            "timeoutSeconds": 1
+          },
+          "name": "api",
+          "ports": [
+            {
+              "containerPort": 8080,
+              "name": "http",
+              "protocol": "TCP"
+            }
+          ],
+          "readinessProbe": {
+            "failureThreshold": 1,
+            "httpGet": {
+              "path": "/ready",
+              "port": "http",
+              "scheme": "HTTP"
+            },
+            "periodSeconds": 1,
+            "successThreshold": 1,
+            "timeoutSeconds": 1
+          },
+          "resources": {
+            "limits": {
+              "cpu": "700m",
+              "memory": "128Mi"
+            },
+            "requests": {
+              "cpu": "50m",
+              "memory": "48Mi"
+            }
+          },
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "capabilities": {
+              "drop": [
+                "ALL"
+              ]
+            },
+            "readOnlyRootFilesystem": true,
+            "runAsGroup": 10001,
+            "runAsNonRoot": true,
+            "runAsUser": 10001
+          },
+          "startupProbe": {
+            "failureThreshold": 35,
+            "httpGet": {
+              "path": "/startup",
+              "port": "http",
+              "scheme": "HTTP"
+            },
+            "periodSeconds": 2,
+            "successThreshold": 1,
+            "timeoutSeconds": 1
+          },
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File"
+        }
+      ],
+      "dnsPolicy": "ClusterFirst",
+      "enableServiceLinks": true,
+      "nodeName": "hw11-control-plane",
+      "preemptionPolicy": "PreemptLowerPriority",
+      "priority": 0,
+      "restartPolicy": "Always",
+      "schedulerName": "default-scheduler",
+      "securityContext": {},
+      "serviceAccount": "default",
+      "serviceAccountName": "default",
+      "terminationGracePeriodSeconds": 45,
+      "tolerations": [
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/not-ready",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        },
+        {
+          "effect": "NoExecute",
+          "key": "node.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "tolerationSeconds": 300
+        }
+      ]
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-16T16:17:14Z",
+          "observedGeneration": 1,
+          "status": "True",
+          "type": "PodReadyToStartContainers"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-16T16:17:14Z",
+          "observedGeneration": 1,
+          "status": "True",
+          "type": "Initialized"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-16T16:17:14Z",
+          "message": "containers with unready status: [api]",
+          "observedGeneration": 1,
+          "reason": "ContainersNotReady",
+          "status": "False",
+          "type": "Ready"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-16T16:17:14Z",
+          "message": "containers with unready status: [api]",
+          "observedGeneration": 1,
+          "reason": "ContainersNotReady",
+          "status": "False",
+          "type": "ContainersReady"
+        },
+        {
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-16T16:17:14Z",
+          "observedGeneration": 1,
+          "status": "True",
+          "type": "PodScheduled"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "allocatedResources": {
+            "cpu": "50m",
+            "memory": "48Mi"
+          },
+          "containerID": "containerd://35750f80c3b3791d041168953ca2076e4d7e8279ae6ed213e676a5c29e5b8554",
+          "image": "docker.io/library/hw11:dev",
+          "imageID": "sha256:21f8be3f166c338b57e3eb7be90ba1d0b10758b5acfc01f9fe63bb6cb03b4666",
+          "lastState": {},
+          "name": "api",
+          "ready": false,
+          "resources": {
+            "limits": {
+              "cpu": "700m",
+              "memory": "128Mi"
+            },
+            "requests": {
+              "cpu": "50m",
+              "memory": "48Mi"
+            }
+          },
+          "restartCount": 0,
+          "started": false,
+          "state": {
+            "running": {
+              "startedAt": "2026-11-16T16:17:14Z"
+            }
+          },
+          "user": {
+            "linux": {
+              "gid": 10001,
+              "supplementalGroups": [
+                10001
+              ],
+              "uid": 10001
+            }
+          }
+        }
+      ],
+      "hostIP": "10.89.3.3",
+      "hostIPs": [
+        {
+          "ip": "10.89.3.3"
+        }
+      ],
+      "observedGeneration": 1,
+      "phase": "Running",
+      "podIP": "10.244.0.59",
+      "podIPs": [
+        {
+          "ip": "10.244.0.59"
+        }
+      ],
+      "qosClass": "Burstable",
+      "startTime": "2026-11-16T16:17:14Z"
+    }
+  }
+]

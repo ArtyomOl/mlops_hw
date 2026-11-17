@@ -1,0 +1,163 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "addressType": "IPv4",
+      "apiVersion": "discovery.k8s.io/v1",
+      "endpoints": [
+        {
+          "addresses": [
+            "10.244.0.51"
+          ],
+          "conditions": {
+            "ready": true,
+            "serving": true,
+            "terminating": false
+          },
+          "nodeName": "hw11-control-plane",
+          "targetRef": {
+            "kind": "Pod",
+            "name": "hw11-b2-564889954f-4ql7q",
+            "namespace": "hw11-b2",
+            "uid": "0c344875-2120-4d6c-9dd4-4b3684191090"
+          }
+        },
+        {
+          "addresses": [
+            "10.244.0.52"
+          ],
+          "conditions": {
+            "ready": true,
+            "serving": true,
+            "terminating": false
+          },
+          "nodeName": "hw11-control-plane",
+          "targetRef": {
+            "kind": "Pod",
+            "name": "hw11-b2-564889954f-z99jp",
+            "namespace": "hw11-b2",
+            "uid": "d05d5064-f02d-4e2a-a8e4-383e8a6d6eb5"
+          }
+        }
+      ],
+      "kind": "EndpointSlice",
+      "metadata": {
+        "annotations": {
+          "endpoints.kubernetes.io/last-change-trigger-time": "2026-11-16T16:16:31Z"
+        },
+        "creationTimestamp": "2026-11-16T16:14:05Z",
+        "generateName": "hw11-b2-affinity-",
+        "generation": 21,
+        "labels": {
+          "app.kubernetes.io/instance": "hw11-b2",
+          "app.kubernetes.io/managed-by": "Helm",
+          "app.kubernetes.io/name": "hw11",
+          "endpointslice.kubernetes.io/managed-by": "endpointslice-controller.k8s.io",
+          "kubernetes.io/service-name": "hw11-b2-affinity"
+        },
+        "name": "hw11-b2-affinity-c7kmq",
+        "namespace": "hw11-b2",
+        "ownerReferences": [
+          {
+            "apiVersion": "v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "Service",
+            "name": "hw11-b2-affinity",
+            "uid": "845629fd-5015-4ea4-8950-8c489f13fba4"
+          }
+        ],
+        "resourceVersion": "2302",
+        "uid": "fa14a38b-c55a-468c-8fd6-c4f8316ac9da"
+      },
+      "ports": [
+        {
+          "name": "http",
+          "port": 8080,
+          "protocol": "TCP"
+        }
+      ]
+    },
+    {
+      "addressType": "IPv4",
+      "apiVersion": "discovery.k8s.io/v1",
+      "endpoints": [
+        {
+          "addresses": [
+            "10.244.0.51"
+          ],
+          "conditions": {
+            "ready": true,
+            "serving": true,
+            "terminating": false
+          },
+          "nodeName": "hw11-control-plane",
+          "targetRef": {
+            "kind": "Pod",
+            "name": "hw11-b2-564889954f-4ql7q",
+            "namespace": "hw11-b2",
+            "uid": "0c344875-2120-4d6c-9dd4-4b3684191090"
+          }
+        },
+        {
+          "addresses": [
+            "10.244.0.52"
+          ],
+          "conditions": {
+            "ready": true,
+            "serving": true,
+            "terminating": false
+          },
+          "nodeName": "hw11-control-plane",
+          "targetRef": {
+            "kind": "Pod",
+            "name": "hw11-b2-564889954f-z99jp",
+            "namespace": "hw11-b2",
+            "uid": "d05d5064-f02d-4e2a-a8e4-383e8a6d6eb5"
+          }
+        }
+      ],
+      "kind": "EndpointSlice",
+      "metadata": {
+        "annotations": {
+          "endpoints.kubernetes.io/last-change-trigger-time": "2026-11-16T16:16:31Z"
+        },
+        "creationTimestamp": "2026-11-16T16:14:05Z",
+        "generateName": "hw11-b2-",
+        "generation": 21,
+        "labels": {
+          "app.kubernetes.io/instance": "hw11-b2",
+          "app.kubernetes.io/managed-by": "Helm",
+          "app.kubernetes.io/name": "hw11",
+          "endpointslice.kubernetes.io/managed-by": "endpointslice-controller.k8s.io",
+          "kubernetes.io/service-name": "hw11-b2"
+        },
+        "name": "hw11-b2-xj2w8",
+        "namespace": "hw11-b2",
+        "ownerReferences": [
+          {
+            "apiVersion": "v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "Service",
+            "name": "hw11-b2",
+            "uid": "94662f71-b33c-44f7-92b2-525da9bd6e7b"
+          }
+        ],
+        "resourceVersion": "2304",
+        "uid": "87ae07d2-4fd2-4680-8d9c-ccc245804c5d"
+      },
+      "ports": [
+        {
+          "name": "http",
+          "port": 8080,
+          "protocol": "TCP"
+        }
+      ]
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

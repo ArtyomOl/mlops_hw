@@ -1,0 +1,9 @@
+{
+  "name": "recover-scale-down",
+  "duration_s": 145,
+  "rps": 1,
+  "policy": "affinity",
+  "profile": "uniform",
+  "start_at_unix_s": 1794846023.2147799,
+  "stop_dispatch_at_unix_s": 1794846168.2147799
+}

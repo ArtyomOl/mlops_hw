@@ -1,0 +1,9 @@
+{
+  "name": "hot-scale-up",
+  "duration_s": 80,
+  "rps": 10,
+  "policy": "affinity",
+  "profile": "skew80",
+  "start_at_unix_s": 1794845866.3316538,
+  "stop_dispatch_at_unix_s": 1794845946.3316538
+}

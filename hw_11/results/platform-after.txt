@@ -1,0 +1,90 @@
+2026-11-16T16:16:26Z
+Filesystem   1024-blocks      Used Available Capacity iused      ifree %iused  Mounted on
+/dev/disk3s5   971350180 652480744 295350972    69% 4046052 2953509720    0%   /System/Volumes/Data
+kind v0.30.0 go1.24.6 darwin/arm64
+v3.19.0+g3d8990f
+Client Version: v1.34.0
+Kustomize Version: v5.7.1
+Server Version: v1.34.0
+NAME                 STATUS   ROLES           AGE    VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION            CONTAINER-RUNTIME
+hw11-control-plane   Ready    control-plane   3m9s   v1.34.0   10.89.3.3     <none>        Debian GNU/Linux 12 (bookworm)   6.17.7-300.fc43.aarch64   containerd://2.1.3
+NAME                               READY   STATUS      RESTARTS   AGE     IP            NODE                 NOMINATED NODE   READINESS GATES
+hw11-6c4c8df655-7xfkk              0/1     Completed   0          2m12s   10.244.0.36   hw11-control-plane   <none>           <none>
+hw11-6c4c8df655-mjvtq              0/1     Completed   0          2m12s   10.244.0.35   hw11-control-plane   <none>           <none>
+hw11-grafana-5957648d9c-qhr6s      1/1     Running     0          2m46s   10.244.0.9    hw11-control-plane   <none>           <none>
+hw11-load-0                        1/1     Running     0          2m20s   10.244.0.25   hw11-control-plane   <none>           <none>
+hw11-load-1                        1/1     Running     0          2m20s   10.244.0.26   hw11-control-plane   <none>           <none>
+hw11-load-2                        1/1     Running     0          2m20s   10.244.0.27   hw11-control-plane   <none>           <none>
+hw11-load-3                        1/1     Running     0          2m20s   10.244.0.28   hw11-control-plane   <none>           <none>
+hw11-prometheus-5c75c47459-b77j7   1/1     Running     0          2m46s   10.244.0.8    hw11-control-plane   <none>           <none>
+NAME                    ADDRESSTYPE   PORTS     ENDPOINTS    AGE
+hw11-affinity-fm9dm     IPv4          <unset>   <unset>      2m47s
+hw11-grafana-sjq74      IPv4          3000      10.244.0.9   2m47s
+hw11-hhsgn              IPv4          <unset>   <unset>      2m47s
+hw11-prometheus-mqh98   IPv4          9090      10.244.0.8   2m47s
+NAME                     SERVICE                      AVAILABLE   AGE
+v1beta1.metrics.k8s.io   kube-system/metrics-server   True        2m47s
+NAME                 CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)
+hw11-control-plane   594m         9%       2237Mi          57%
+NAME                               CPU(cores)   MEMORY(bytes)
+hw11-load-0                        3m           22Mi
+hw11-load-1                        3m           22Mi
+hw11-load-2                        3m           22Mi
+hw11-load-3                        3m           22Mi
+hw11-prometheus-5c75c47459-b77j7   1m           49Mi
+TYPE           TOTAL       ACTIVE      SIZE        RECLAIMABLE
+Images         155         12          19.42GB     16.89GB (87%)
+Containers     13          1           4.815MB     1.677MB (35%)
+Local Volumes  83          10          3.646GB     533.5MB (15%)
+21f8be3f166c338b57e3eb7be90ba1d0b10758b5acfc01f9fe63bb6cb03b4666 171570361
+sha256:228390eced221ad2986a3dd77e10b1accca6ba8ceb36f1572de1b346a337cc1a 154793882
+sha256:3229b411042d457a44ea8807e90520e4b7da8700a8617ed20f0c4cb799bebe2b 1022536853
+               total        used        free      shared  buff/cache   available
+Mem:            3890        1891         347          14        1856        1998
+Swap:              0           0           0
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/vda4      104266732 27947956  76318776  27% /var
+IMAGE                                           TAG                  IMAGE ID            SIZE
+docker.io/grafana/grafana                       12.1.1               084f3a553cf17       186MB
+docker.io/kindest/kindnetd                      v20250512-df8de77b   b1a8c6f707935       40.6MB
+docker.io/kindest/local-path-helper             v20241212-8ac705d0   b530d82c16da9       2.95MB
+docker.io/kindest/local-path-provisioner        v20250214-acbabc1a   653e2348b2d4a       20.2MB
+docker.io/library/hw11                          dev                  21f8be3f166c3       172MB
+docker.io/prom/prometheus                       v3.5.0               5a1d4a6d0adfd       117MB
+registry.k8s.io/coredns/coredns                 v1.12.1              138784d87c9c5       20.4MB
+registry.k8s.io/etcd                            3.6.4-0              a1894772a478e       98.2MB
+registry.k8s.io/kube-apiserver-arm64            v1.34.0              d291939e99406       84.8MB
+registry.k8s.io/kube-apiserver                  v1.34.0              d291939e99406       84.8MB
+registry.k8s.io/kube-controller-manager-arm64   v1.34.0              996be7e86d9b3       72.6MB
+registry.k8s.io/kube-controller-manager         v1.34.0              996be7e86d9b3       72.6MB
+registry.k8s.io/kube-proxy-arm64                v1.34.0              6fc32d66c1411       75.9MB
+registry.k8s.io/kube-proxy                      v1.34.0              6fc32d66c1411       75.9MB
+registry.k8s.io/kube-scheduler-arm64            v1.34.0              a25f5ef9c34c3       51.6MB
+registry.k8s.io/kube-scheduler                  v1.34.0              a25f5ef9c34c3       51.6MB
+registry.k8s.io/metrics-server/metrics-server   v0.8.0               bc6c1e09a843d       20.6MB
+registry.k8s.io/pause                           3.10                 afb61768ce381       268kB
+2.5G	/var/lib/containerd
+2.7M	/var/lib/kubelet
+36.0K	/prometheus
+2.1M	/var/lib/grafana
+I1116 16:13:26.911256       1 shared_informer.go:349] "Waiting for caches to sync" controller="node informer cache"
+I1116 16:13:27.011679       1 shared_informer.go:356] "Caches are synced" controller="node informer cache"
+I1116 16:13:27.011723       1 server.go:219] "Successfully retrieved NodeIPs" NodeIPs=["10.89.3.3"]
+E1116 16:13:27.011796       1 server.go:256] "Kube-proxy configuration may be incomplete or incorrect" err="nodePortAddresses is unset; NodePort connections will be accepted on all local IPs. Consider using `--nodeport-addresses primary`"
+I1116 16:13:27.046672       1 server.go:265] "kube-proxy running in dual-stack mode" primary ipFamily="IPv4"
+I1116 16:13:27.046699       1 server_linux.go:132] "Using iptables Proxier"
+I1116 16:13:27.047985       1 proxier.go:242] "Setting route_localnet=1 to allow node-ports on localhost; to change this either disable iptables.localhostNodePorts (--iptables-localhost-nodeports) or set nodePortAddresses (--nodeport-addresses) to filter loopback addresses" ipFamily="IPv4"
+I1116 16:13:27.053352       1 server.go:527] "Version info" version="v1.34.0"
+I1116 16:13:27.053367       1 server.go:529] "Golang settings" GOGC="" GOMAXPROCS="" GOTRACEBACK=""
+I1116 16:13:27.254774       1 config.go:200] "Starting service config controller"
+I1116 16:13:27.254790       1 shared_informer.go:349] "Waiting for caches to sync" controller="service config"
+I1116 16:13:27.254827       1 config.go:309] "Starting node config controller"
+I1116 16:13:27.254833       1 shared_informer.go:349] "Waiting for caches to sync" controller="node config"
+I1116 16:13:27.254854       1 config.go:403] "Starting serviceCIDR config controller"
+I1116 16:13:27.254863       1 shared_informer.go:349] "Waiting for caches to sync" controller="serviceCIDR config"
+I1116 16:13:27.254870       1 config.go:106] "Starting endpoint slice config controller"
+I1116 16:13:27.254872       1 shared_informer.go:349] "Waiting for caches to sync" controller="endpoint slice config"
+I1116 16:13:27.355868       1 shared_informer.go:356] "Caches are synced" controller="endpoint slice config"
+I1116 16:13:27.355889       1 shared_informer.go:356] "Caches are synced" controller="service config"
+I1116 16:13:27.355892       1 shared_informer.go:356] "Caches are synced" controller="serviceCIDR config"
+I1116 16:13:27.355853       1 shared_informer.go:356] "Caches are synced" controller="node config"

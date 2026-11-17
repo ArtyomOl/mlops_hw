@@ -1,0 +1,9 @@
+{
+  "name": "overload-alerts",
+  "duration_s": 65,
+  "rps": 25,
+  "policy": "affinity",
+  "profile": "skew80",
+  "start_at_unix_s": 1794845952.23006,
+  "stop_dispatch_at_unix_s": 1794846017.23006
+}

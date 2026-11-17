@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    {{- include "hw11.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.hpa.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  revisionHistoryLimit: 4
+  progressDeadlineSeconds: {{ .Values.rollout.progressDeadlineSeconds }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      {{- include "hw11.labels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "hw11.labels" . | nindent 8 }}
+      annotations:
+        hw11/image-id: {{ .Values.image.revision | quote }}
+        hw11/model-version: {{ .Values.model.version | quote }}
+        hw11/probe-mode: {{ .Values.backend.probeMode | quote }}
+        checksum/config: {{ include (print $.Template.BasePath "/config.yaml") . | sha256sum }}
+    spec:
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: {{ .Values.rollout.terminationGracePeriodSeconds }}
+      containers:
+        - name: api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-config
+          env:
+            # The Pod template carries its model binding across container restarts, even
+            # after a newer rollout updates the shared ConfigMap.
+            - name: MODEL_PATH
+              value: {{ printf "/srv/models/%s.json" .Values.model.version | quote }}
+            - name: MODEL_SHA256
+              value: {{ required "unknown model.version or missing model.sha256" (index .Values.model.sha256 .Values.model.version) | quote }}
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 10001
+            runAsGroup: 10001
+            capabilities:
+              drop: ["ALL"]
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - python
+                  - -c
+                  - |
+                    import time
+                    from urllib.request import Request, urlopen
+                    time.sleep({{ .Values.rollout.detachSeconds }})
+                    with urlopen(Request("http://127.0.0.1:8080/drain", method="POST"), timeout=2):
+                        pass
+          startupProbe:
+            httpGet:
+              path: /startup
+              port: http
+            periodSeconds: {{ .Values.rollout.startupPeriodSeconds }}
+            failureThreshold: {{ .Values.rollout.startupFailureThreshold }}
+            timeoutSeconds: 1
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: http
+            periodSeconds: {{ .Values.rollout.readinessPeriodSeconds }}
+            failureThreshold: 1
+            timeoutSeconds: 1
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: {{ .Values.rollout.livenessPeriodSeconds }}
+            failureThreshold: 3
+            timeoutSeconds: 1

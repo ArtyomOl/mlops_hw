@@ -1,0 +1,10 @@
+Before: cpus=6 memory_MiB=2048 disk_GiB=100
+Nov 16 19:07:37 localhost.localdomain kernel: Out of memory: Killed process 10374 (grafana) total-vm:1726884kB, anon-rss:80400kB, file-rss:204kB, shmem-rss:0kB, UID:100471 pgtables:832kB oom_score_adj:968
+Nov 16 19:07:37 localhost.localdomain kernel: Out of memory: Killed process 10374 (grafana) total-vm:1726884kB, anon-rss:80400kB, file-rss:204kB, shmem-rss:0kB, UID:100471 pgtables:832kB oom_score_adj:968
+Nov 16 19:07:10 localhost.localdomain kernel: Out of memory: Killed process 7222 (local-path-prov) total-vm:1265788kB, anon-rss:6656kB, file-rss:568kB, shmem-rss:0kB, UID:501 pgtables:168kB oom_score_adj:1000
+Nov 16 19:07:10 localhost.localdomain kernel: Out of memory: Killed process 7222 (local-path-prov) total-vm:1265788kB, anon-rss:6656kB, file-rss:568kB, shmem-rss:0kB, UID:501 pgtables:168kB oom_score_adj:1000
+After: cpus=6 memory_MiB=4096 disk_GiB=100
+               total        used        free      shared  buff/cache   available
+Mem:            3890        1040         130          10        2889        2849
+Swap:              0           0           0
+Restore after own cluster cleanup: podman machine stop podman-machine-default && podman machine set --memory 2048 podman-machine-default

@@ -1,0 +1,25 @@
+{{- range $affinity := list false true }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $.Release.Name }}{{ if $affinity }}-affinity{{ end }}
+  labels:
+    {{- include "hw11.labels" $ | nindent 4 }}
+spec:
+  type: ClusterIP
+  selector:
+    {{- include "hw11.labels" $ | nindent 4 }}
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+  {{- if $affinity }}
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: {{ $.Values.service.affinityTimeoutSeconds }}
+  {{- else }}
+  sessionAffinity: None
+  {{- end }}
+{{- end }}

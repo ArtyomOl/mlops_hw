@@ -1,0 +1,9 @@
+/.tools/
+/.state/
+/.pytest_cache/
+/.venv/
+/results/**/*.stderr
+!/results/**/*.log
+
+# Per-client copies are consolidated into requests.jsonl for each trial.
+/results/b/*/hw11-load-*.jsonl

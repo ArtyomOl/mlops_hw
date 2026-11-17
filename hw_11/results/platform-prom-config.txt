@@ -1,0 +1,6 @@
+Checking /etc/hw11/prometheus.yaml
+  SUCCESS: 1 rule files found
+ SUCCESS: /etc/hw11/prometheus.yaml is valid prometheus config file syntax
+
+Checking /etc/hw11/alerts.yaml
+  SUCCESS: 2 rules found

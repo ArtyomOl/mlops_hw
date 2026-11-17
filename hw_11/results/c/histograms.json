@@ -1,0 +1,454 @@
+{
+  "baseline": {
+    "ttfc": {
+      "promql": "histogram_quantile(0.95, sum by (le) (increase(hw11_ttfc_seconds_bucket[35s])))",
+      "count_promql": "sum(increase(hw11_ttfc_seconds_count[35s]))",
+      "p95": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794845862.02,
+                "0.2854340476808113"
+              ]
+            }
+          ]
+        }
+      },
+      "samples": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794845862.02,
+                "34.813500000000005"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "duration": {
+      "promql": "histogram_quantile(0.95, sum by (le) (increase(hw11_request_duration_seconds_bucket[35s])))",
+      "count_promql": "sum(increase(hw11_request_duration_seconds_count[35s]))",
+      "p95": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794845862.02,
+                "0.49"
+              ]
+            }
+          ]
+        }
+      },
+      "samples": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794845862.02,
+                "34.813500000000005"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "client_same_completion_window": {
+      "planned": 35,
+      "sent": 35,
+      "completed": 35,
+      "rejected": 0,
+      "aborted": 0,
+      "timeout": 0,
+      "not_sent": 0,
+      "other_error": 0,
+      "error_fraction": 0.0,
+      "timeout_fraction": 0.0,
+      "statuses": {
+        "200": 35
+      },
+      "warmup_incomplete": 0,
+      "cache_hits": 23,
+      "cache_misses": 12,
+      "ttfc_ms": {
+        "n": 35,
+        "p50": 155.232,
+        "p95": 240.443
+      },
+      "e2e_ms": {
+        "n": 35,
+        "p50": 357.4784,
+        "p95": 442.7426
+      },
+      "queue_ms": {
+        "n": 35,
+        "p50": 0.014,
+        "p95": 0.061
+      },
+      "send_late_ms": {
+        "n": 35,
+        "p50": 3.8898,
+        "p95": 14.2685
+      },
+      "inter_chunk_ms": {
+        "n": 140,
+        "p50": 50.562,
+        "p95": 52.1068
+      }
+    }
+  },
+  "hot-scale-up": {
+    "ttfc": {
+      "promql": "histogram_quantile(0.95, sum by (le) (increase(hw11_ttfc_seconds_bucket[80s])))",
+      "count_promql": "sum(increase(hw11_ttfc_seconds_count[80s]))",
+      "p95": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794845946.332,
+                "0.9830578512396694"
+              ]
+            }
+          ]
+        }
+      },
+      "samples": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794845946.332,
+                "524.8"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "duration": {
+      "promql": "histogram_quantile(0.95, sum by (le) (increase(hw11_request_duration_seconds_bucket[80s])))",
+      "count_promql": "sum(increase(hw11_request_duration_seconds_count[80s]))",
+      "p95": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794845946.332,
+                "1.4653521126760563"
+              ]
+            }
+          ]
+        }
+      },
+      "samples": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794845946.332,
+                "524.8"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "client_same_completion_window": {
+      "planned": 524,
+      "sent": 524,
+      "completed": 524,
+      "rejected": 0,
+      "aborted": 0,
+      "timeout": 0,
+      "not_sent": 0,
+      "other_error": 0,
+      "error_fraction": 0.0,
+      "timeout_fraction": 0.0,
+      "statuses": {
+        "200": 524
+      },
+      "warmup_incomplete": 0,
+      "cache_hits": 524,
+      "cache_misses": 0,
+      "ttfc_ms": {
+        "n": 524,
+        "p50": 865.8594,
+        "p95": 879.6836
+      },
+      "e2e_ms": {
+        "n": 524,
+        "p50": 1109.2003,
+        "p95": 1116.7948
+      },
+      "queue_ms": {
+        "n": 524,
+        "p50": 693.609,
+        "p95": 701.216
+      },
+      "send_late_ms": {
+        "n": 524,
+        "p50": 1.9265,
+        "p95": 4.1605
+      },
+      "inter_chunk_ms": {
+        "n": 2096,
+        "p50": 51.7219,
+        "p95": 84.5739
+      }
+    }
+  },
+  "overload-alerts": {
+    "ttfc": {
+      "promql": "histogram_quantile(0.95, sum by (le) (increase(hw11_ttfc_seconds_bucket[65s])))",
+      "count_promql": "sum(increase(hw11_ttfc_seconds_count[65s]))",
+      "p95": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794846017.23,
+                "0.9793088737201365"
+              ]
+            }
+          ]
+        }
+      },
+      "samples": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794846017.23,
+                "568.75"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "duration": {
+      "promql": "histogram_quantile(0.95, sum by (le) (increase(hw11_request_duration_seconds_bucket[65s])))",
+      "count_promql": "sum(increase(hw11_request_duration_seconds_count[65s]))",
+      "p95": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794846017.23,
+                "1.4555084745762712"
+              ]
+            }
+          ]
+        }
+      },
+      "samples": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794846017.23,
+                "568.75"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "client_same_completion_window": {
+      "planned": 565,
+      "sent": 565,
+      "completed": 565,
+      "rejected": 0,
+      "aborted": 0,
+      "timeout": 0,
+      "not_sent": 0,
+      "other_error": 0,
+      "error_fraction": 0.0,
+      "timeout_fraction": 0.0,
+      "statuses": {
+        "200": 565
+      },
+      "warmup_incomplete": 0,
+      "cache_hits": 565,
+      "cache_misses": 0,
+      "ttfc_ms": {
+        "n": 565,
+        "p50": 894.3088,
+        "p95": 941.1389
+      },
+      "e2e_ms": {
+        "n": 565,
+        "p50": 1134.8673,
+        "p95": 1178.822
+      },
+      "queue_ms": {
+        "n": 565,
+        "p50": 717.819,
+        "p95": 762.281
+      },
+      "send_late_ms": {
+        "n": 565,
+        "p50": 1.8247,
+        "p95": 7.905
+      },
+      "inter_chunk_ms": {
+        "n": 2260,
+        "p50": 52.0291,
+        "p95": 83.995
+      }
+    }
+  },
+  "recover-scale-down": {
+    "ttfc": {
+      "promql": "histogram_quantile(0.95, sum by (le) (increase(hw11_ttfc_seconds_bucket[145s])))",
+      "count_promql": "sum(increase(hw11_ttfc_seconds_count[145s]))",
+      "p95": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794846168.215,
+                "0.19313730269952456"
+              ]
+            }
+          ]
+        }
+      },
+      "samples": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794846168.215,
+                "145.0010209329521"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "duration": {
+      "promql": "histogram_quantile(0.95, sum by (le) (increase(hw11_request_duration_seconds_bucket[145s])))",
+      "count_promql": "sum(increase(hw11_request_duration_seconds_count[145s]))",
+      "p95": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794846168.215,
+                "0.49"
+              ]
+            }
+          ]
+        }
+      },
+      "samples": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1794846168.215,
+                "145.0010209329521"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "client_same_completion_window": {
+      "planned": 145,
+      "sent": 145,
+      "completed": 145,
+      "rejected": 0,
+      "aborted": 0,
+      "timeout": 0,
+      "not_sent": 0,
+      "other_error": 0,
+      "error_fraction": 0.0,
+      "timeout_fraction": 0.0,
+      "statuses": {
+        "200": 145
+      },
+      "warmup_incomplete": 0,
+      "cache_hits": 145,
+      "cache_misses": 0,
+      "ttfc_ms": {
+        "n": 145,
+        "p50": 137.6973,
+        "p95": 158.0391
+      },
+      "e2e_ms": {
+        "n": 145,
+        "p50": 340.1306,
+        "p95": 362.1172
+      },
+      "queue_ms": {
+        "n": 145,
+        "p50": 0.021,
+        "p95": 0.048
+      },
+      "send_late_ms": {
+        "n": 145,
+        "p50": 4.9782,
+        "p95": 11.141
+      },
+      "inter_chunk_ms": {
+        "n": 580,
+        "p50": 50.7861,
+        "p95": 52.2617
+      }
+    }
+  }
+}

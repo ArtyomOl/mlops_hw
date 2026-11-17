@@ -1,0 +1,9 @@
+{
+  "name": "baseline",
+  "duration_s": 35,
+  "rps": 1,
+  "policy": "affinity",
+  "profile": "uniform",
+  "start_at_unix_s": 1794845827.02002,
+  "stop_dispatch_at_unix_s": 1794845862.02002
+}

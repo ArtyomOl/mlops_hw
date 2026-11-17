@@ -1,0 +1,235 @@
+{{- if .Values.monitoring.enabled }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ .Release.Name }}-prometheus
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: {{ .Release.Name }}-prometheus
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ .Release.Name }}-prometheus
+subjects:
+  - kind: ServiceAccount
+    name: {{ .Release.Name }}-prometheus
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ .Release.Name }}-prometheus
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-prometheus
+data:
+  prometheus.yaml: |
+    global:
+      scrape_interval: {{ .Values.monitoring.scrapeInterval }}
+      evaluation_interval: {{ .Values.monitoring.evaluationInterval }}
+    rule_files: [/etc/hw11/alerts.yaml]
+    scrape_configs:
+      - job_name: hw11
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              own_namespace: true
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app_kubernetes_io_name]
+            regex: hw11
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_label_app_kubernetes_io_instance]
+            regex: {{ .Release.Name | quote }}
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_container_port_name]
+            regex: http
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_phase]
+            regex: Running
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_name]
+            target_label: pod
+          - source_labels: [__meta_kubernetes_pod_ready]
+            target_label: pod_ready
+  alerts.yaml: |
+    groups:
+      - name: hw11
+        rules:
+          - alert: HighTTFC
+            expr: |
+              histogram_quantile(0.95, sum by (le) (rate(hw11_ttfc_seconds_bucket[{{ .Values.monitoring.thresholds.lookback }}]))) > {{ .Values.monitoring.thresholds.ttfcSeconds }}
+              and sum(increase(hw11_ttfc_seconds_count[{{ .Values.monitoring.thresholds.lookback }}])) >= {{ .Values.monitoring.thresholds.minSamples }}
+            for: {{ .Values.monitoring.thresholds.hold }}
+            labels:
+              severity: warning
+            annotations:
+              summary: "p95 TTFC успешных ответов выше порога"
+          - alert: HighRejectRatio
+            expr: |
+              sum(rate(hw11_requests_total{outcome=~"rejected|aborted"}[{{ .Values.monitoring.thresholds.lookback }}])) /
+              clamp_min(sum(rate(hw11_requests_total[{{ .Values.monitoring.thresholds.lookback }}])), 0.001) > {{ .Values.monitoring.thresholds.errorRatio }}
+              and sum(increase(hw11_requests_total[{{ .Values.monitoring.thresholds.lookback }}])) >= {{ .Values.monitoring.thresholds.minSamples }}
+            for: {{ .Values.monitoring.thresholds.hold }}
+            labels:
+              severity: warning
+            annotations:
+              summary: "Доля отказов и прерванных ответов выше порога"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-prometheus
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-prometheus
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-prometheus
+      annotations:
+        checksum/monitoring: {{ toYaml .Values.monitoring | sha256sum }}
+    spec:
+      serviceAccountName: {{ .Release.Name }}-prometheus
+      containers:
+        - name: prometheus
+          image: {{ .Values.monitoring.prometheusImage | quote }}
+          args:
+            - --config.file=/etc/hw11/prometheus.yaml
+            - --storage.tsdb.path=/prometheus
+            - --storage.tsdb.retention.time={{ .Values.monitoring.retentionTime }}
+            - --storage.tsdb.retention.size={{ .Values.monitoring.retentionSize }}
+          ports:
+            - {name: http, containerPort: 9090}
+          readinessProbe:
+            httpGet: {path: /-/ready, port: http}
+          resources:
+            requests: {cpu: 60m, memory: 64Mi}
+            limits: {cpu: 300m, memory: 192Mi}
+          volumeMounts:
+            - {name: config, mountPath: /etc/hw11, readOnly: true}
+            - {name: tsdb, mountPath: /prometheus}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ .Release.Name }}-prometheus
+        - name: tsdb
+          emptyDir: {sizeLimit: {{ .Values.monitoring.retentionVolume }}}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-prometheus
+spec:
+  selector:
+    app: {{ .Release.Name }}-prometheus
+  ports:
+    - {name: http, port: 9090, targetPort: http}
+{{- if .Values.monitoring.grafanaEnabled }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-grafana-config
+data:
+  datasource.yaml: |
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        uid: prometheus
+        url: http://{{ .Release.Name }}-prometheus:9090
+        access: proxy
+        isDefault: true
+        editable: false
+  dashboard-provider.yaml: |
+    apiVersion: 1
+    providers:
+      - name: hw11
+        type: file
+        allowUiUpdates: false
+        options:
+          path: /var/lib/hw11-dashboards
+  hw11.json: |
+    {{- .Files.Get "files/dashboard.json" | nindent 4 }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-grafana
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-grafana
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-grafana
+      annotations:
+        checksum/dashboard: {{ .Files.Get "files/dashboard.json" | sha256sum }}
+    spec:
+      automountServiceAccountToken: false
+      securityContext: {fsGroup: 472}
+      containers:
+        - name: grafana
+          image: {{ .Values.monitoring.grafanaImage | quote }}
+          env:
+            - {name: GF_AUTH_ANONYMOUS_ENABLED, value: "true"}
+            - {name: GF_AUTH_ANONYMOUS_ORG_ROLE, value: "Viewer"}
+            - {name: GF_AUTH_DISABLE_LOGIN_FORM, value: "true"}
+            - {name: GOMEMLIMIT, value: "160MiB"}
+            - {name: GF_UNIFIED_ALERTING_ENABLED, value: "false"}
+            - {name: GF_PLUGINS_PREINSTALL_DISABLED, value: "true"}
+            - {name: GF_PLUGINS_PUBLIC_KEY_RETRIEVAL_DISABLED, value: "true"}
+            - {name: GF_ANALYTICS_REPORTING_ENABLED, value: "false"}
+            - {name: GF_ANALYTICS_CHECK_FOR_UPDATES, value: "false"}
+            - {name: GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES, value: "false"}
+          ports:
+            - {name: http, containerPort: 3000}
+          startupProbe:
+            httpGet: {path: /api/health, port: http}
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 36
+          readinessProbe:
+            httpGet: {path: /api/health, port: http}
+            timeoutSeconds: 3
+          resources:
+            requests: {cpu: 100m, memory: 96Mi}
+            limits: {cpu: 500m, memory: 256Mi}
+          volumeMounts:
+            - {name: config, mountPath: /etc/grafana/provisioning/datasources/datasource.yaml, subPath: datasource.yaml, readOnly: true}
+            - {name: config, mountPath: /etc/grafana/provisioning/dashboards/provider.yaml, subPath: dashboard-provider.yaml, readOnly: true}
+            - {name: config, mountPath: /var/lib/hw11-dashboards, readOnly: true}
+            - {name: state, mountPath: /var/lib/grafana}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ .Release.Name }}-grafana-config
+        - name: state
+          emptyDir: {sizeLimit: 48Mi}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-grafana
+spec:
+  selector:
+    app: {{ .Release.Name }}-grafana
+  ports:
+    - {name: http, port: 3000, targetPort: http}
+{{- end }}
+{{- end }}

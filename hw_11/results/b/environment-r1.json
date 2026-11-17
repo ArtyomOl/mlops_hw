@@ -1,0 +1,58 @@
+{
+  "backend": {
+    "hpa.enabled": "false",
+    "replicaCount": 2,
+    "rollout.progressDeadlineSeconds": 180,
+    "model.version": "A",
+    "backend.warmupSeconds": 1,
+    "backend.probeMode": "correct",
+    "backend.warmupFail": "false",
+    "backend.processConcurrency": 1,
+    "backend.queueCapacity": 4,
+    "backend.cacheCapacity": 16,
+    "backend.cacheHitMs": 15,
+    "backend.cacheMissMs": 100,
+    "backend.chunkDelayMs": 50,
+    "backend.cpuWorkMs": 0
+  },
+  "client_pod_ips": {
+    "hw11-load-0": "10.244.0.25",
+    "hw11-load-1": "10.244.0.26",
+    "hw11-load-2": "10.244.0.27",
+    "hw11-load-3": "10.244.0.28"
+  },
+  "context": "kind-hw11",
+  "kubernetes": {
+    "clientVersion": {
+      "major": "1",
+      "minor": "34",
+      "gitVersion": "v1.34.0",
+      "gitCommit": "f28b4c9efbca5c5c0af716d9f2d5702667ee8a45",
+      "gitTreeState": "clean",
+      "buildDate": "2025-08-27T10:17:33Z",
+      "goVersion": "go1.24.6",
+      "compiler": "gc",
+      "platform": "darwin/arm64"
+    },
+    "kustomizeVersion": "v5.7.1",
+    "serverVersion": {
+      "major": "1",
+      "minor": "34",
+      "emulationMajor": "1",
+      "emulationMinor": "34",
+      "minCompatibilityMajor": "1",
+      "minCompatibilityMinor": "33",
+      "gitVersion": "v1.34.0",
+      "gitCommit": "f28b4c9efbca5c5c0af716d9f2d5702667ee8a45",
+      "gitTreeState": "clean",
+      "buildDate": "2025-08-27T10:09:04Z",
+      "goVersion": "go1.24.6",
+      "compiler": "gc",
+      "platform": "linux/arm64"
+    }
+  },
+  "planned_duration_s": 120,
+  "repeats": 3,
+  "rps": 6,
+  "smoke": false
+}

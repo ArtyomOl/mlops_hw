@@ -1,0 +1,62 @@
+replicaCount: 2
+image:
+  repository: hw11
+  tag: dev
+  pullPolicy: Never
+  revision: ""
+model:
+  version: A
+  sha256:
+    A: dd3167b4db9e15d2fab00c3a172aee9c248c8963081155f393944faf3f463626
+    B: 858eb906358c4477636ad068844d68a77682823f012066d5e13973bc13965771
+backend:
+  warmupSeconds: 20
+  probeMode: correct
+  warmupFail: false
+  processConcurrency: 2
+  queueCapacity: 8
+  cacheCapacity: 16
+  cacheHitMs: 15
+  cacheMissMs: 100
+  cpuWorkMs: 0
+  chunkDelayMs: 30
+  enableExperimentFaults: false
+resources:
+  requests:
+    cpu: 200m
+    memory: 48Mi
+  limits:
+    cpu: 700m
+    memory: 128Mi
+rollout:
+  terminationGracePeriodSeconds: 45
+  detachSeconds: 3
+  progressDeadlineSeconds: 90
+  startupPeriodSeconds: 2
+  startupFailureThreshold: 35
+  readinessPeriodSeconds: 1
+  livenessPeriodSeconds: 5
+service:
+  affinityTimeoutSeconds: 10800
+hpa:
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 3
+  cpuUtilization: 60
+  downscaleSeconds: 90
+monitoring:
+  enabled: true
+  grafanaEnabled: true
+  prometheusImage: prom/prometheus:v3.5.0
+  grafanaImage: grafana/grafana:12.1.1
+  scrapeInterval: 5s
+  evaluationInterval: 5s
+  retentionTime: 4h
+  retentionSize: 100MB
+  retentionVolume: 160Mi
+  thresholds:
+    ttfcSeconds: 0.35
+    errorRatio: 0.1
+    lookback: 30s
+    minSamples: 10
+    hold: 15s

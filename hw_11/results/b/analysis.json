@@ -1,0 +1,790 @@
+{
+  "affinity:skew80": [
+    {
+      "trial": "affinity-skew80-r1",
+      "namespace": "hw11",
+      "pods": {
+        "hw11-6c4c8df655-6c6nb": {
+          "requests": 108,
+          "completed": 108,
+          "ttfc_p95_ms": 101.6911,
+          "queue_p95_ms": 55.098,
+          "log_admissions_with_outcome": 108,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.8116666666666666
+        },
+        "hw11-6c4c8df655-cch7m": {
+          "requests": 612,
+          "completed": 546,
+          "ttfc_p95_ms": 880.2873,
+          "queue_p95_ms": 863.284,
+          "log_admissions_with_outcome": 546,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.0025
+        }
+      },
+      "max_pod_share": 0.85,
+      "n_ttfc": 654,
+      "ttfc_p95_ms": 877.1671,
+      "queue_p95_ms": 860.617,
+      "e2e_p95_ms": 1081.6367,
+      "send_late_p95_ms": 5.1266,
+      "rejected": 66,
+      "error_fraction": 0.09166666666666666,
+      "cache_hits": 642,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 971,
+        "pods_with_occupancy": [
+          "hw11-6c4c8df655-6c6nb",
+          "hw11-6c4c8df655-cch7m"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.25",
+        "10.244.0.26",
+        "10.244.0.27",
+        "10.244.0.28"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-6c4c8df655-cch7m": 576
+        },
+        "hw11-load-1": {
+          "hw11-6c4c8df655-6c6nb": 72
+        },
+        "hw11-load-2": {
+          "hw11-6c4c8df655-6c6nb": 36
+        },
+        "hw11-load-3": {
+          "hw11-6c4c8df655-cch7m": 36
+        }
+      }
+    },
+    {
+      "trial": "affinity-skew80-r2",
+      "namespace": "hw11-b2",
+      "pods": {
+        "hw11-b2-564889954f-4ql7q": {
+          "requests": 72,
+          "completed": 72,
+          "ttfc_p95_ms": 102.9956,
+          "queue_p95_ms": 0.098,
+          "log_admissions_with_outcome": 72,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.8741666666666666
+        },
+        "hw11-b2-564889954f-z99jp": {
+          "requests": 648,
+          "completed": 546,
+          "ttfc_p95_ms": 884.0373,
+          "queue_p95_ms": 867.424,
+          "log_admissions_with_outcome": 546,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.0033333333333333335
+        }
+      },
+      "max_pod_share": 0.9,
+      "n_ttfc": 618,
+      "ttfc_p95_ms": 882.3613,
+      "queue_p95_ms": 866.293,
+      "e2e_p95_ms": 1086.6371,
+      "send_late_p95_ms": 4.8099,
+      "rejected": 102,
+      "error_fraction": 0.14166666666666666,
+      "cache_hits": 606,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 1047,
+        "pods_with_occupancy": [
+          "hw11-b2-564889954f-4ql7q",
+          "hw11-b2-564889954f-z99jp"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.17",
+        "10.244.0.19",
+        "10.244.0.21",
+        "10.244.0.24"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-b2-564889954f-z99jp": 576
+        },
+        "hw11-load-1": {
+          "hw11-b2-564889954f-z99jp": 72
+        },
+        "hw11-load-2": {
+          "hw11-b2-564889954f-4ql7q": 36
+        },
+        "hw11-load-3": {
+          "hw11-b2-564889954f-4ql7q": 36
+        }
+      }
+    },
+    {
+      "trial": "affinity-skew80-r3",
+      "namespace": "hw11-b3",
+      "pods": {
+        "hw11-b3-866c75ddd5-5l7qp": {
+          "requests": 144,
+          "completed": 144,
+          "ttfc_p95_ms": 101.4252,
+          "queue_p95_ms": 57.551,
+          "log_admissions_with_outcome": 144,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.7483333333333333
+        },
+        "hw11-b3-866c75ddd5-8m4pn": {
+          "requests": 576,
+          "completed": 546,
+          "ttfc_p95_ms": 863.6793,
+          "queue_p95_ms": 847.3,
+          "log_admissions_with_outcome": 546,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.0025
+        }
+      },
+      "max_pod_share": 0.8,
+      "n_ttfc": 690,
+      "ttfc_p95_ms": 855.2415,
+      "queue_p95_ms": 839.144,
+      "e2e_p95_ms": 1057.0345,
+      "send_late_p95_ms": 4.8383,
+      "rejected": 30,
+      "error_fraction": 0.041666666666666664,
+      "cache_hits": 678,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 895,
+        "pods_with_occupancy": [
+          "hw11-b3-866c75ddd5-5l7qp",
+          "hw11-b3-866c75ddd5-8m4pn"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.18",
+        "10.244.0.20",
+        "10.244.0.22",
+        "10.244.0.23"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-b3-866c75ddd5-8m4pn": 576
+        },
+        "hw11-load-1": {
+          "hw11-b3-866c75ddd5-5l7qp": 72
+        },
+        "hw11-load-2": {
+          "hw11-b3-866c75ddd5-5l7qp": 36
+        },
+        "hw11-load-3": {
+          "hw11-b3-866c75ddd5-5l7qp": 36
+        }
+      }
+    }
+  ],
+  "affinity:uniform": [
+    {
+      "trial": "affinity-uniform-r1",
+      "namespace": "hw11",
+      "pods": {
+        "hw11-6c4c8df655-hxl7f": {
+          "requests": 180,
+          "completed": 180,
+          "ttfc_p95_ms": 102.6398,
+          "queue_p95_ms": 55.472,
+          "log_admissions_with_outcome": 180,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.6825
+        },
+        "hw11-6c4c8df655-vhfgd": {
+          "requests": 540,
+          "completed": 538,
+          "ttfc_p95_ms": 585.9129,
+          "queue_p95_ms": 569.889,
+          "log_admissions_with_outcome": 538,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.014166666666666666
+        }
+      },
+      "max_pod_share": 0.75,
+      "n_ttfc": 718,
+      "ttfc_p95_ms": 554.2101,
+      "queue_p95_ms": 537.803,
+      "e2e_p95_ms": 756.8759,
+      "send_late_p95_ms": 3.6887,
+      "rejected": 2,
+      "error_fraction": 0.002777777777777778,
+      "cache_hits": 706,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 686,
+        "pods_with_occupancy": [
+          "hw11-6c4c8df655-hxl7f",
+          "hw11-6c4c8df655-vhfgd"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.25",
+        "10.244.0.26",
+        "10.244.0.27",
+        "10.244.0.28"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-6c4c8df655-vhfgd": 180
+        },
+        "hw11-load-1": {
+          "hw11-6c4c8df655-vhfgd": 180
+        },
+        "hw11-load-2": {
+          "hw11-6c4c8df655-vhfgd": 180
+        },
+        "hw11-load-3": {
+          "hw11-6c4c8df655-hxl7f": 180
+        }
+      }
+    },
+    {
+      "trial": "affinity-uniform-r2",
+      "namespace": "hw11-b2",
+      "pods": {
+        "hw11-b2-564889954f-65fwj": {
+          "requests": 540,
+          "completed": 540,
+          "ttfc_p95_ms": 612.4515,
+          "queue_p95_ms": 595.819,
+          "log_admissions_with_outcome": 540,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.01
+        },
+        "hw11-b2-564889954f-srbgt": {
+          "requests": 180,
+          "completed": 180,
+          "ttfc_p95_ms": 106.7956,
+          "queue_p95_ms": 56.533,
+          "log_admissions_with_outcome": 180,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.6816666666666666
+        }
+      },
+      "max_pod_share": 0.75,
+      "n_ttfc": 720,
+      "ttfc_p95_ms": 591.5633,
+      "queue_p95_ms": 575.476,
+      "e2e_p95_ms": 793.7864,
+      "send_late_p95_ms": 3.8259,
+      "rejected": 0,
+      "error_fraction": 0.0,
+      "cache_hits": 708,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 730,
+        "pods_with_occupancy": [
+          "hw11-b2-564889954f-65fwj",
+          "hw11-b2-564889954f-srbgt"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.17",
+        "10.244.0.19",
+        "10.244.0.21",
+        "10.244.0.24"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-b2-564889954f-srbgt": 180
+        },
+        "hw11-load-1": {
+          "hw11-b2-564889954f-65fwj": 180
+        },
+        "hw11-load-2": {
+          "hw11-b2-564889954f-65fwj": 180
+        },
+        "hw11-load-3": {
+          "hw11-b2-564889954f-65fwj": 180
+        }
+      }
+    },
+    {
+      "trial": "affinity-uniform-r3",
+      "namespace": "hw11-b3",
+      "pods": {
+        "hw11-b3-866c75ddd5-gvtvq": {
+          "requests": 540,
+          "completed": 540,
+          "ttfc_p95_ms": 628.6963,
+          "queue_p95_ms": 611.86,
+          "log_admissions_with_outcome": 540,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.01
+        },
+        "hw11-b3-866c75ddd5-pc5m9": {
+          "requests": 180,
+          "completed": 180,
+          "ttfc_p95_ms": 110.6233,
+          "queue_p95_ms": 61.531,
+          "log_admissions_with_outcome": 180,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.6816666666666666
+        }
+      },
+      "max_pod_share": 0.75,
+      "n_ttfc": 720,
+      "ttfc_p95_ms": 613.9733,
+      "queue_p95_ms": 597.677,
+      "e2e_p95_ms": 816.551,
+      "send_late_p95_ms": 3.8871,
+      "rejected": 0,
+      "error_fraction": 0.0,
+      "cache_hits": 708,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 742,
+        "pods_with_occupancy": [
+          "hw11-b3-866c75ddd5-gvtvq",
+          "hw11-b3-866c75ddd5-pc5m9"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.18",
+        "10.244.0.20",
+        "10.244.0.22",
+        "10.244.0.23"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-b3-866c75ddd5-pc5m9": 180
+        },
+        "hw11-load-1": {
+          "hw11-b3-866c75ddd5-gvtvq": 180
+        },
+        "hw11-load-2": {
+          "hw11-b3-866c75ddd5-gvtvq": 180
+        },
+        "hw11-load-3": {
+          "hw11-b3-866c75ddd5-gvtvq": 180
+        }
+      }
+    }
+  ],
+  "ordinary:skew80": [
+    {
+      "trial": "ordinary-skew80-r1",
+      "namespace": "hw11",
+      "pods": {
+        "hw11-6c4c8df655-stb98": {
+          "requests": 358,
+          "completed": 358,
+          "ttfc_p95_ms": 287.004,
+          "queue_p95_ms": 270.533,
+          "log_admissions_with_outcome": 358,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.3575
+        },
+        "hw11-6c4c8df655-wbrr7": {
+          "requests": 362,
+          "completed": 362,
+          "ttfc_p95_ms": 239.1985,
+          "queue_p95_ms": 219.956,
+          "log_admissions_with_outcome": 362,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.3541666666666667
+        }
+      },
+      "max_pod_share": 0.5027777777777778,
+      "n_ttfc": 720,
+      "ttfc_p95_ms": 277.5593,
+      "queue_p95_ms": 252.96,
+      "e2e_p95_ms": 484.259,
+      "send_late_p95_ms": 5.2924,
+      "rejected": 0,
+      "error_fraction": 0.0,
+      "cache_hits": 708,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 319,
+        "pods_with_occupancy": [
+          "hw11-6c4c8df655-stb98",
+          "hw11-6c4c8df655-wbrr7"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.25",
+        "10.244.0.26",
+        "10.244.0.27",
+        "10.244.0.28"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-6c4c8df655-wbrr7": 289,
+          "hw11-6c4c8df655-stb98": 287
+        },
+        "hw11-load-1": {
+          "hw11-6c4c8df655-stb98": 37,
+          "hw11-6c4c8df655-wbrr7": 35
+        },
+        "hw11-load-2": {
+          "hw11-6c4c8df655-stb98": 20,
+          "hw11-6c4c8df655-wbrr7": 16
+        },
+        "hw11-load-3": {
+          "hw11-6c4c8df655-stb98": 14,
+          "hw11-6c4c8df655-wbrr7": 22
+        }
+      }
+    },
+    {
+      "trial": "ordinary-skew80-r2",
+      "namespace": "hw11-b2",
+      "pods": {
+        "hw11-b2-564889954f-7bvk5": {
+          "requests": 373,
+          "completed": 373,
+          "ttfc_p95_ms": 385.4379,
+          "queue_p95_ms": 350.14,
+          "log_admissions_with_outcome": 373,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.3325
+        },
+        "hw11-b2-564889954f-nwbx4": {
+          "requests": 347,
+          "completed": 347,
+          "ttfc_p95_ms": 231.7693,
+          "queue_p95_ms": 214.51,
+          "log_admissions_with_outcome": 347,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.375
+        }
+      },
+      "max_pod_share": 0.5180555555555556,
+      "n_ttfc": 720,
+      "ttfc_p95_ms": 281.8046,
+      "queue_p95_ms": 265.313,
+      "e2e_p95_ms": 486.0286,
+      "send_late_p95_ms": 5.0254,
+      "rejected": 0,
+      "error_fraction": 0.0,
+      "cache_hits": 708,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 316,
+        "pods_with_occupancy": [
+          "hw11-b2-564889954f-7bvk5",
+          "hw11-b2-564889954f-nwbx4"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.17",
+        "10.244.0.19",
+        "10.244.0.21",
+        "10.244.0.24"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-b2-564889954f-7bvk5": 297,
+          "hw11-b2-564889954f-nwbx4": 279
+        },
+        "hw11-load-1": {
+          "hw11-b2-564889954f-7bvk5": 45,
+          "hw11-b2-564889954f-nwbx4": 27
+        },
+        "hw11-load-2": {
+          "hw11-b2-564889954f-nwbx4": 17,
+          "hw11-b2-564889954f-7bvk5": 19
+        },
+        "hw11-load-3": {
+          "hw11-b2-564889954f-nwbx4": 24,
+          "hw11-b2-564889954f-7bvk5": 12
+        }
+      }
+    },
+    {
+      "trial": "ordinary-skew80-r3",
+      "namespace": "hw11-b3",
+      "pods": {
+        "hw11-b3-866c75ddd5-tm8p9": {
+          "requests": 340,
+          "completed": 340,
+          "ttfc_p95_ms": 181.7524,
+          "queue_p95_ms": 164.569,
+          "log_admissions_with_outcome": 340,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.4008333333333333
+        },
+        "hw11-b3-866c75ddd5-whwlp": {
+          "requests": 380,
+          "completed": 380,
+          "ttfc_p95_ms": 390.4529,
+          "queue_p95_ms": 326.139,
+          "log_admissions_with_outcome": 380,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.3175
+        }
+      },
+      "max_pod_share": 0.5277777777777778,
+      "n_ttfc": 720,
+      "ttfc_p95_ms": 287.6917,
+      "queue_p95_ms": 270.434,
+      "e2e_p95_ms": 491.5667,
+      "send_late_p95_ms": 5.6989,
+      "rejected": 0,
+      "error_fraction": 0.0,
+      "cache_hits": 708,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 301,
+        "pods_with_occupancy": [
+          "hw11-b3-866c75ddd5-tm8p9",
+          "hw11-b3-866c75ddd5-whwlp"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.18",
+        "10.244.0.20",
+        "10.244.0.22",
+        "10.244.0.23"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-b3-866c75ddd5-whwlp": 303,
+          "hw11-b3-866c75ddd5-tm8p9": 273
+        },
+        "hw11-load-1": {
+          "hw11-b3-866c75ddd5-tm8p9": 40,
+          "hw11-b3-866c75ddd5-whwlp": 32
+        },
+        "hw11-load-2": {
+          "hw11-b3-866c75ddd5-tm8p9": 15,
+          "hw11-b3-866c75ddd5-whwlp": 21
+        },
+        "hw11-load-3": {
+          "hw11-b3-866c75ddd5-tm8p9": 12,
+          "hw11-b3-866c75ddd5-whwlp": 24
+        }
+      }
+    }
+  ],
+  "ordinary:uniform": [
+    {
+      "trial": "ordinary-uniform-r1",
+      "namespace": "hw11",
+      "pods": {
+        "hw11-6c4c8df655-7xfkk": {
+          "requests": 349,
+          "completed": 349,
+          "ttfc_p95_ms": 180.5796,
+          "queue_p95_ms": 162.876,
+          "log_admissions_with_outcome": 349,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.3775
+        },
+        "hw11-6c4c8df655-mjvtq": {
+          "requests": 371,
+          "completed": 371,
+          "ttfc_p95_ms": 245.3107,
+          "queue_p95_ms": 218.871,
+          "log_admissions_with_outcome": 371,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.33
+        }
+      },
+      "max_pod_share": 0.5152777777777777,
+      "n_ttfc": 720,
+      "ttfc_p95_ms": 229.8875,
+      "queue_p95_ms": 212.224,
+      "e2e_p95_ms": 433.133,
+      "send_late_p95_ms": 4.0407,
+      "rejected": 0,
+      "error_fraction": 0.0,
+      "cache_hits": 708,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 264,
+        "pods_with_occupancy": [
+          "hw11-6c4c8df655-7xfkk",
+          "hw11-6c4c8df655-mjvtq"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.25",
+        "10.244.0.26",
+        "10.244.0.27",
+        "10.244.0.28"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-6c4c8df655-mjvtq": 88,
+          "hw11-6c4c8df655-7xfkk": 92
+        },
+        "hw11-load-1": {
+          "hw11-6c4c8df655-mjvtq": 95,
+          "hw11-6c4c8df655-7xfkk": 85
+        },
+        "hw11-load-2": {
+          "hw11-6c4c8df655-mjvtq": 93,
+          "hw11-6c4c8df655-7xfkk": 87
+        },
+        "hw11-load-3": {
+          "hw11-6c4c8df655-mjvtq": 95,
+          "hw11-6c4c8df655-7xfkk": 85
+        }
+      }
+    },
+    {
+      "trial": "ordinary-uniform-r2",
+      "namespace": "hw11-b2",
+      "pods": {
+        "hw11-b2-564889954f-kvhjl": {
+          "requests": 374,
+          "completed": 374,
+          "ttfc_p95_ms": 286.7517,
+          "queue_p95_ms": 268.636,
+          "log_admissions_with_outcome": 374,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.3275
+        },
+        "hw11-b2-564889954f-kvl27": {
+          "requests": 346,
+          "completed": 346,
+          "ttfc_p95_ms": 229.546,
+          "queue_p95_ms": 205.01,
+          "log_admissions_with_outcome": 346,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.38
+        }
+      },
+      "max_pod_share": 0.5194444444444445,
+      "n_ttfc": 720,
+      "ttfc_p95_ms": 273.3671,
+      "queue_p95_ms": 247.978,
+      "e2e_p95_ms": 475.408,
+      "send_late_p95_ms": 3.6941,
+      "rejected": 0,
+      "error_fraction": 0.0,
+      "cache_hits": 708,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 326,
+        "pods_with_occupancy": [
+          "hw11-b2-564889954f-kvhjl",
+          "hw11-b2-564889954f-kvl27"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.17",
+        "10.244.0.19",
+        "10.244.0.21",
+        "10.244.0.24"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-b2-564889954f-kvhjl": 102,
+          "hw11-b2-564889954f-kvl27": 78
+        },
+        "hw11-load-1": {
+          "hw11-b2-564889954f-kvl27": 92,
+          "hw11-b2-564889954f-kvhjl": 88
+        },
+        "hw11-load-2": {
+          "hw11-b2-564889954f-kvhjl": 90,
+          "hw11-b2-564889954f-kvl27": 90
+        },
+        "hw11-load-3": {
+          "hw11-b2-564889954f-kvl27": 86,
+          "hw11-b2-564889954f-kvhjl": 94
+        }
+      }
+    },
+    {
+      "trial": "ordinary-uniform-r3",
+      "namespace": "hw11-b3",
+      "pods": {
+        "hw11-b3-866c75ddd5-9d47t": {
+          "requests": 351,
+          "completed": 351,
+          "ttfc_p95_ms": 236.1992,
+          "queue_p95_ms": 219.816,
+          "log_admissions_with_outcome": 351,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.37166666666666665
+        },
+        "hw11-b3-866c75ddd5-wtwj2": {
+          "requests": 369,
+          "completed": 369,
+          "ttfc_p95_ms": 297.7052,
+          "queue_p95_ms": 280.183,
+          "log_admissions_with_outcome": 369,
+          "log_admissions_without_outcome": 0,
+          "idle_fraction_sampled": 0.3433333333333333
+        }
+      },
+      "max_pod_share": 0.5125,
+      "n_ttfc": 720,
+      "ttfc_p95_ms": 281.8904,
+      "queue_p95_ms": 264.25,
+      "e2e_p95_ms": 484.7141,
+      "send_late_p95_ms": 4.1741,
+      "rejected": 0,
+      "error_fraction": 0.0,
+      "cache_hits": 708,
+      "cache_misses": 12,
+      "occupancy": {
+        "sampling_interval_ms": 100,
+        "sample_count": 1200,
+        "waiting_while_another_idle_samples": 338,
+        "pods_with_occupancy": [
+          "hw11-b3-866c75ddd5-9d47t",
+          "hw11-b3-866c75ddd5-wtwj2"
+        ]
+      },
+      "source_ips": [
+        "10.244.0.18",
+        "10.244.0.20",
+        "10.244.0.22",
+        "10.244.0.23"
+      ],
+      "client_routes": {
+        "hw11-load-0": {
+          "hw11-b3-866c75ddd5-9d47t": 96,
+          "hw11-b3-866c75ddd5-wtwj2": 84
+        },
+        "hw11-load-1": {
+          "hw11-b3-866c75ddd5-wtwj2": 100,
+          "hw11-b3-866c75ddd5-9d47t": 80
+        },
+        "hw11-load-2": {
+          "hw11-b3-866c75ddd5-9d47t": 88,
+          "hw11-b3-866c75ddd5-wtwj2": 92
+        },
+        "hw11-load-3": {
+          "hw11-b3-866c75ddd5-9d47t": 87,
+          "hw11-b3-866c75ddd5-wtwj2": 93
+        }
+      }
+    }
+  ]
+}

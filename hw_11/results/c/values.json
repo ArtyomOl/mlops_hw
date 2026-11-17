@@ -1,0 +1,17 @@
+{
+  "hpa.enabled": "true",
+  "hpa.minReplicas": 2,
+  "hpa.maxReplicas": 3,
+  "hpa.cpuUtilization": 60,
+  "hpa.downscaleSeconds": 90,
+  "backend.warmupSeconds": 12,
+  "backend.probeMode": "correct",
+  "backend.cpuWorkMs": 110,
+  "backend.processConcurrency": 2,
+  "backend.queueCapacity": 4,
+  "backend.chunkDelayMs": 50,
+  "monitoring.enabled": "true",
+  "monitoring.grafanaEnabled": "false",
+  "monitoring.retentionVolume": "96Mi",
+  "monitoring.retentionSize": "50MB"
+}

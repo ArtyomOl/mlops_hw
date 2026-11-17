@@ -1,0 +1,171 @@
+{
+  "all": {
+    "planned": 720,
+    "sent": 720,
+    "completed": 720,
+    "rejected": 0,
+    "aborted": 0,
+    "timeout": 0,
+    "not_sent": 0,
+    "other_error": 0,
+    "error_fraction": 0.0,
+    "timeout_fraction": 0.0,
+    "statuses": {
+      "200": 720
+    },
+    "warmup_incomplete": 0,
+    "cache_hits": 708,
+    "cache_misses": 12,
+    "ttfc_ms": {
+      "n": 720,
+      "p50": 67.9405,
+      "p95": 281.8904
+    },
+    "e2e_ms": {
+      "n": 720,
+      "p50": 270.8502,
+      "p95": 484.7141
+    },
+    "queue_ms": {
+      "n": 720,
+      "p50": 51.012,
+      "p95": 264.25
+    },
+    "send_late_ms": {
+      "n": 720,
+      "p50": 2.0893,
+      "p95": 4.1741
+    },
+    "inter_chunk_ms": {
+      "n": 2880,
+      "p50": 50.6233,
+      "p95": 52.0142
+    }
+  },
+  "by_pod": {
+    "hw11-b3-866c75ddd5-9d47t": {
+      "planned": 351,
+      "sent": 351,
+      "completed": 351,
+      "rejected": 0,
+      "aborted": 0,
+      "timeout": 0,
+      "not_sent": 0,
+      "other_error": 0,
+      "error_fraction": 0.0,
+      "timeout_fraction": 0.0,
+      "statuses": {
+        "200": 351
+      },
+      "warmup_incomplete": 0,
+      "cache_hits": 345,
+      "cache_misses": 6,
+      "ttfc_ms": {
+        "n": 351,
+        "p50": 67.6892,
+        "p95": 236.1992
+      },
+      "e2e_ms": {
+        "n": 351,
+        "p50": 270.3319,
+        "p95": 440.1229
+      },
+      "queue_ms": {
+        "n": 351,
+        "p50": 50.785,
+        "p95": 219.816
+      },
+      "send_late_ms": {
+        "n": 351,
+        "p50": 2.0268,
+        "p95": 4.4181
+      },
+      "inter_chunk_ms": {
+        "n": 1404,
+        "p50": 50.6134,
+        "p95": 51.9609
+      }
+    },
+    "hw11-b3-866c75ddd5-wtwj2": {
+      "planned": 369,
+      "sent": 369,
+      "completed": 369,
+      "rejected": 0,
+      "aborted": 0,
+      "timeout": 0,
+      "not_sent": 0,
+      "other_error": 0,
+      "error_fraction": 0.0,
+      "timeout_fraction": 0.0,
+      "statuses": {
+        "200": 369
+      },
+      "warmup_incomplete": 0,
+      "cache_hits": 363,
+      "cache_misses": 6,
+      "ttfc_ms": {
+        "n": 369,
+        "p50": 68.1651,
+        "p95": 297.7052
+      },
+      "e2e_ms": {
+        "n": 369,
+        "p50": 271.2858,
+        "p95": 500.0796
+      },
+      "queue_ms": {
+        "n": 369,
+        "p50": 51.687,
+        "p95": 280.183
+      },
+      "send_late_ms": {
+        "n": 369,
+        "p50": 2.1349,
+        "p95": 3.9795
+      },
+      "inter_chunk_ms": {
+        "n": 1476,
+        "p50": 50.6284,
+        "p95": 52.0492
+      }
+    }
+  },
+  "client_to_pod": {
+    "hw11-load-0": {
+      "hw11-b3-866c75ddd5-9d47t": 96,
+      "hw11-b3-866c75ddd5-wtwj2": 84
+    },
+    "hw11-load-1": {
+      "hw11-b3-866c75ddd5-wtwj2": 100,
+      "hw11-b3-866c75ddd5-9d47t": 80
+    },
+    "hw11-load-2": {
+      "hw11-b3-866c75ddd5-9d47t": 88,
+      "hw11-b3-866c75ddd5-wtwj2": 92
+    },
+    "hw11-load-3": {
+      "hw11-b3-866c75ddd5-9d47t": 87,
+      "hw11-b3-866c75ddd5-wtwj2": 93
+    }
+  },
+  "source_addresses_seen": [
+    "10.244.0.18",
+    "10.244.0.20",
+    "10.244.0.22",
+    "10.244.0.23"
+  ],
+  "trial": {
+    "trial": "ordinary-uniform-r3",
+    "policy": "ordinary",
+    "profile": "uniform",
+    "duration_s": 120,
+    "rps": 6,
+    "start_at_unix_s": 1794845662.50647,
+    "stop_dispatch_at_unix_s": 1794845782.50647,
+    "namespace": "hw11-b3",
+    "initial_cache": "empty after quiescent scale to zero and replacement",
+    "http": "HTTP/1.1 Connection: close",
+    "service_url": "http://hw11-b3",
+    "requested_mix": "25/25/25/25"
+  }
+}

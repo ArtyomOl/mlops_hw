@@ -1,0 +1,24 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     {"event": "artifact_loaded", "ts_unix_ms": 1794845903652, "pod": "hw11-a-5bc578ff88-5n8p5", "version": "A", "backend_mode": "simulated", "model_sha256": "dd3167b4db9e15d2fab00c3a172aee9c248c8963081155f393944faf3f463626"}
+INFO:     {"event": "warmup_started", "ts_unix_ms": 1794845903652, "pod": "hw11-a-5bc578ff88-5n8p5", "version": "A", "backend_mode": "simulated", "seconds": 20.0, "probe_mode": "correct"}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     10.244.0.1:53300 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38006 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38022 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38030 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38034 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38038 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:48158 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:48174 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:48178 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:48194 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     {"event": "warmup_finished", "ts_unix_ms": 1794845923653, "pod": "hw11-a-5bc578ff88-5n8p5", "version": "A", "backend_mode": "simulated", "ready": true}
+INFO:     10.244.0.1:48204 - "GET /startup HTTP/1.1" 200 OK
+INFO:     10.244.0.1:48218 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:53918 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:53922 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845927048, "pod": "hw11-a-5bc578ff88-5n8p5", "version": "A", "backend_mode": "simulated", "request_id": "a-session-a-after-0", "session_id": "session-CTRL-HW11-ALFA", "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.065, "cache_hit": false}
+INFO:     10.244.0.29:47440 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845927156, "pod": "hw11-a-5bc578ff88-5n8p5", "version": "A", "backend_mode": "simulated", "request_id": "a-session-a-after-0", "session_id": "session-CTRL-HW11-ALFA", "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.065, "cache_hit": false, "parts": 1, "ttfc_ms": 108.422, "elapsed_ms": 108.752}

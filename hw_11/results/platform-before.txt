@@ -1,0 +1,28 @@
+2026-11-16T15:58:56Z
+Filesystem   1024-blocks      Used Available Capacity iused      ifree %iused  Mounted on
+/dev/disk3s5   971350180 644704824 303126892    69% 4040325 3031268920    0%   /System/Volumes/Data
+Client:        Podman Engine
+Version:       5.7.1
+API Version:   5.7.1
+Go Version:    go1.25.5
+Built:         Tue Dec  9 23:11:03 2025
+Build Origin:  brew
+OS/Arch:       darwin/arm64
+
+Server:       Podman Engine
+Version:      5.7.1
+API Version:  5.7.1
+Go Version:   go1.25.4 X:nodwarf5
+Git Commit:   f845d14e941889ba4c071f35233d09b29d363c75
+Built:        Tue Dec  9 03:00:00 2025
+OS/Arch:      linux/arm64
+running cpus=6 memory_MiB=2048 disk_GiB=100
+TYPE           TOTAL       ACTIVE      SIZE        RECLAIMABLE
+Images         136         11          18.19GB     16.68GB (92%)
+Containers     12          0           1.677MB     1.677MB (100%)
+Local Volumes  82          9           914MB       533.5MB (58%)
+               total        used        free      shared  buff/cache   available
+Mem:            1943         428         833           0         770        1514
+Swap:              0           0           0
+Filesystem     1K-blocks     Used Available Use% Mounted on
+/dev/vda4      104266732 23937112  80329620  23% /var

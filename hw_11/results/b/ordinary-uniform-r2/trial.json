@@ -1,0 +1,14 @@
+{
+  "trial": "ordinary-uniform-r2",
+  "policy": "ordinary",
+  "profile": "uniform",
+  "duration_s": 120,
+  "rps": 6,
+  "start_at_unix_s": 1794846067.56622,
+  "stop_dispatch_at_unix_s": 1794846187.56622,
+  "namespace": "hw11-b2",
+  "initial_cache": "empty after quiescent scale to zero and replacement",
+  "http": "HTTP/1.1 Connection: close",
+  "service_url": "http://hw11-b2",
+  "requested_mix": "25/25/25/25"
+}

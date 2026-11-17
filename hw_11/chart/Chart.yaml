@@ -1,0 +1,6 @@
+apiVersion: v2
+name: hw11
+version: 0.1.0
+appVersion: "0.1.0"
+description: CPU inference simulator and observability for MLOps homework 11
+type: application

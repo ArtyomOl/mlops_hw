@@ -1,0 +1,110 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "annotations": {
+          "meta.helm.sh/release-name": "hw11-b3",
+          "meta.helm.sh/release-namespace": "hw11-b3"
+        },
+        "creationTimestamp": "2026-11-16T16:14:05Z",
+        "labels": {
+          "app.kubernetes.io/instance": "hw11-b3",
+          "app.kubernetes.io/managed-by": "Helm",
+          "app.kubernetes.io/name": "hw11"
+        },
+        "name": "hw11-b3",
+        "namespace": "hw11-b3",
+        "resourceVersion": "707",
+        "uid": "95beba7b-101e-4155-99ad-6996013716c4"
+      },
+      "spec": {
+        "clusterIP": "10.96.134.145",
+        "clusterIPs": [
+          "10.96.134.145"
+        ],
+        "internalTrafficPolicy": "Cluster",
+        "ipFamilies": [
+          "IPv4"
+        ],
+        "ipFamilyPolicy": "SingleStack",
+        "ports": [
+          {
+            "name": "http",
+            "port": 80,
+            "protocol": "TCP",
+            "targetPort": "http"
+          }
+        ],
+        "selector": {
+          "app.kubernetes.io/instance": "hw11-b3",
+          "app.kubernetes.io/name": "hw11"
+        },
+        "sessionAffinity": "None",
+        "type": "ClusterIP"
+      },
+      "status": {
+        "loadBalancer": {}
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "annotations": {
+          "meta.helm.sh/release-name": "hw11-b3",
+          "meta.helm.sh/release-namespace": "hw11-b3"
+        },
+        "creationTimestamp": "2026-11-16T16:14:05Z",
+        "labels": {
+          "app.kubernetes.io/instance": "hw11-b3",
+          "app.kubernetes.io/managed-by": "Helm",
+          "app.kubernetes.io/name": "hw11"
+        },
+        "name": "hw11-b3-affinity",
+        "namespace": "hw11-b3",
+        "resourceVersion": "714",
+        "uid": "437881d4-d273-490c-a8fc-eb4ac90cd942"
+      },
+      "spec": {
+        "clusterIP": "10.96.67.45",
+        "clusterIPs": [
+          "10.96.67.45"
+        ],
+        "internalTrafficPolicy": "Cluster",
+        "ipFamilies": [
+          "IPv4"
+        ],
+        "ipFamilyPolicy": "SingleStack",
+        "ports": [
+          {
+            "name": "http",
+            "port": 80,
+            "protocol": "TCP",
+            "targetPort": "http"
+          }
+        ],
+        "selector": {
+          "app.kubernetes.io/instance": "hw11-b3",
+          "app.kubernetes.io/name": "hw11"
+        },
+        "sessionAffinity": "ClientIP",
+        "sessionAffinityConfig": {
+          "clientIP": {
+            "timeoutSeconds": 10800
+          }
+        },
+        "type": "ClusterIP"
+      },
+      "status": {
+        "loadBalancer": {}
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  }
+}

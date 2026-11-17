@@ -1,0 +1,11 @@
+.venv/bin/python -m unittest discover -s tests -v
+test_drain_preserves_already_admitted_stream (test_app.SimulatorHttpTest.test_drain_preserves_already_admitted_stream) ... ok
+test_early_probe_admits_cold_requests_and_correct_probe_rejects (test_app.SimulatorHttpTest.test_early_probe_admits_cold_requests_and_correct_probe_rejects) ... ok
+test_isolation_and_bounded_cache (test_app.SimulatorHttpTest.test_isolation_and_bounded_cache) ... ok
+test_refusal_and_aborted_stream_are_separate_outcomes (test_app.SimulatorHttpTest.test_refusal_and_aborted_stream_are_separate_outcomes) ... ok
+test_rejections_and_empty_terminators_are_accounted_separately (test_load_client.RequestAccounting.test_rejections_and_empty_terminators_are_accounted_separately) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 4.674s
+
+OK

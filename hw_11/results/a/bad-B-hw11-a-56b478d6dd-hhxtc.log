@@ -1,0 +1,17 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     {"event": "artifact_loaded", "ts_unix_ms": 1794845834898, "pod": "hw11-a-56b478d6dd-hhxtc", "version": "B", "backend_mode": "simulated", "model_sha256": "858eb906358c4477636ad068844d68a77682823f012066d5e13973bc13965771"}
+INFO:     {"event": "warmup_started", "ts_unix_ms": 1794845834899, "pod": "hw11-a-56b478d6dd-hhxtc", "version": "B", "backend_mode": "simulated", "seconds": 20.0, "probe_mode": "correct"}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     10.244.0.1:41130 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:41136 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:41148 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:41154 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:41160 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38488 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38504 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38506 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38512 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     10.244.0.1:38520 - "GET /startup HTTP/1.1" 503 Service Unavailable
+INFO:     {"event": "warmup_failed", "ts_unix_ms": 1794845854900, "pod": "hw11-a-56b478d6dd-hhxtc", "version": "B", "backend_mode": "simulated"}

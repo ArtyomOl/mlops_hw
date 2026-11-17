@@ -1,0 +1,22 @@
+{{- $version := .Values.model.version | toString -}}
+{{- $hash := index .Values.model.sha256 $version -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+  labels:
+    {{- include "hw11.labels" . | nindent 4 }}
+data:
+  MODEL_PATH: {{ printf "/srv/models/%s.json" $version | quote }}
+  MODEL_SHA256: {{ required "unknown model.version or missing model.sha256" $hash | quote }}
+  WARMUP_SECONDS: {{ .Values.backend.warmupSeconds | quote }}
+  PROBE_MODE: {{ .Values.backend.probeMode | quote }}
+  WARMUP_FAIL: {{ .Values.backend.warmupFail | toString | quote }}
+  PROCESS_CONCURRENCY: {{ .Values.backend.processConcurrency | quote }}
+  QUEUE_CAPACITY: {{ .Values.backend.queueCapacity | quote }}
+  CACHE_CAPACITY: {{ .Values.backend.cacheCapacity | quote }}
+  CACHE_HIT_MS: {{ .Values.backend.cacheHitMs | quote }}
+  CACHE_MISS_MS: {{ .Values.backend.cacheMissMs | quote }}
+  CPU_WORK_MS: {{ .Values.backend.cpuWorkMs | quote }}
+  CHUNK_DELAY_MS: {{ .Values.backend.chunkDelayMs | quote }}
+  ENABLE_EXPERIMENT_FAULTS: {{ .Values.backend.enableExperimentFaults | toString | quote }}

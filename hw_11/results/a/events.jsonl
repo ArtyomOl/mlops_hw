@@ -1,0 +1,10 @@
+{"wall_s": 1794845644.767721, "event": "start", "utc": "2026-11-16T16:14:04.767571+00:00"}
+{"wall_s": 1794845652.2709801, "event": "early-upgrade"}
+{"wall_s": 1794845691.0358982, "event": "correct-upgrade"}
+{"wall_s": 1794845739.6404538, "event": "rollout-start", "to": "B"}
+{"wall_s": 1794845833.8729448, "event": "bad-B-start", "rollback_revision": 7}
+{"wall_s": 1794845863.228448, "event": "rollback-finished"}
+{"wall_s": 1794845875.2595048, "event": "forced-process-exit", "pod": "hw11-a-5bc578ff88-4p7mg"}
+{"wall_s": 1794845902.7126741, "event": "force-failure-recovered"}
+{"wall_s": 1794845902.759702, "event": "delete-pod", "pod": "hw11-a-5bc578ff88-4p7mg", "uid": "2a52614e-d092-4d09-a1fc-dfe232dba565"}
+{"wall_s": 1794845927.151296, "event": "replacement-ready", "pod": "hw11-a-5bc578ff88-5n8p5", "uid": "0a7a936d-5e38-434c-acdd-f8e1875ddc68"}

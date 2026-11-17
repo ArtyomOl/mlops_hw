@@ -1,0 +1,114 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     {"event": "artifact_loaded", "ts_unix_ms": 1794845655950, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "model_sha256": "dd3167b4db9e15d2fab00c3a172aee9c248c8963081155f393944faf3f463626"}
+INFO:     {"event": "warmup_started", "ts_unix_ms": 1794845655950, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "seconds": 20.0, "probe_mode": "early"}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     10.244.0.1:37422 - "GET /startup HTTP/1.1" 200 OK
+INFO:     10.244.0.1:37430 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:37444 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845659030, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-15", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.098, "cache_hit": false}
+INFO:     10.244.0.29:36824 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845659139, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-15", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.098, "cache_hit": false, "parts": 1, "ttfc_ms": 108.277, "elapsed_ms": 109.146}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845659530, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-16", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.033, "cache_hit": true}
+INFO:     10.244.0.29:36836 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845659546, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-16", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.033, "cache_hit": true, "parts": 1, "ttfc_ms": 16.123, "elapsed_ms": 16.666}
+INFO:     10.244.0.1:37448 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845660029, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-17", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.014, "cache_hit": true}
+INFO:     10.244.0.29:36844 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845660047, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-17", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.014, "cache_hit": true, "parts": 1, "ttfc_ms": 17.55, "elapsed_ms": 17.807}
+INFO:     10.244.0.1:37454 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845660529, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-18", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.017, "cache_hit": true}
+INFO:     10.244.0.29:36852 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845660546, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-18", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.017, "cache_hit": true, "parts": 1, "ttfc_ms": 16.495, "elapsed_ms": 16.871}
+INFO:     10.244.0.1:37462 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845661028, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-19", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.01, "cache_hit": true}
+INFO:     10.244.0.29:36866 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845661045, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-19", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.01, "cache_hit": true, "parts": 1, "ttfc_ms": 16.304, "elapsed_ms": 16.904}
+INFO:     10.244.0.1:37468 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:37482 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845663029, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-23", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.022, "cache_hit": true}
+INFO:     10.244.0.29:36904 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845663045, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-23", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.022, "cache_hit": true, "parts": 1, "ttfc_ms": 15.764, "elapsed_ms": 16.121}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845663528, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-24", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.032, "cache_hit": true}
+INFO:     10.244.0.29:36912 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845663544, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-24", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.032, "cache_hit": true, "parts": 1, "ttfc_ms": 15.658, "elapsed_ms": 15.974}
+INFO:     10.244.0.1:37484 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:37492 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845665030, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-27", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.022, "cache_hit": true}
+INFO:     10.244.0.29:43896 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845665048, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-27", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.022, "cache_hit": true, "parts": 1, "ttfc_ms": 17.046, "elapsed_ms": 17.877}
+INFO:     10.244.0.1:55860 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:55872 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845666030, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-29", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.014, "cache_hit": true}
+INFO:     10.244.0.29:43916 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845666046, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-29", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.014, "cache_hit": true, "parts": 1, "ttfc_ms": 15.601, "elapsed_ms": 15.994}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845666529, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-30", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.29:43932 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845666545, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-30", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.011, "cache_hit": true, "parts": 1, "ttfc_ms": 15.663, "elapsed_ms": 15.883}
+INFO:     10.244.0.1:55876 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845667528, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-32", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.29:43940 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845667545, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-32", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.011, "cache_hit": true, "parts": 1, "ttfc_ms": 15.759, "elapsed_ms": 16.365}
+INFO:     10.244.0.1:55886 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845668528, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-34", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.29:43964 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845668544, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-34", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.011, "cache_hit": true, "parts": 1, "ttfc_ms": 15.824, "elapsed_ms": 16.076}
+INFO:     10.244.0.1:55890 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845669528, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-36", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.01, "cache_hit": true}
+INFO:     10.244.0.29:43978 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845669544, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-36", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.01, "cache_hit": true, "parts": 1, "ttfc_ms": 15.648, "elapsed_ms": 15.86}
+INFO:     10.244.0.1:55894 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:55902 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:55908 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845671030, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-39", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.021, "cache_hit": true}
+INFO:     10.244.0.29:44010 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845671047, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-39", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.021, "cache_hit": true, "parts": 1, "ttfc_ms": 15.926, "elapsed_ms": 16.396}
+INFO:     10.244.0.1:55918 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:55930 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:55938 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845674528, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-46", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.01, "cache_hit": true}
+INFO:     10.244.0.29:44090 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845674544, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-46", "session_id": null, "client_ip": "10.244.0.29", "warmed": false, "queue_ms": 0.01, "cache_hit": true, "parts": 1, "ttfc_ms": 15.555, "elapsed_ms": 15.803}
+INFO:     10.244.0.1:55954 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:37620 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:37626 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "warmup_finished", "ts_unix_ms": 1794845675950, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "ready": true}
+INFO:     10.244.0.29:38794 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845676029, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-49", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845676045, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-49", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 1, "ttfc_ms": 15.494, "elapsed_ms": 15.826}
+INFO:     10.244.0.1:37636 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845677528, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-52", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.29:38822 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845677545, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-52", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 1, "ttfc_ms": 16.073, "elapsed_ms": 16.32}
+INFO:     10.244.0.1:37638 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:37652 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845679028, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-55", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.018, "cache_hit": true}
+INFO:     10.244.0.29:38836 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845679045, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-55", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.018, "cache_hit": true, "parts": 1, "ttfc_ms": 15.983, "elapsed_ms": 16.411}
+INFO:     10.244.0.1:37656 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845680029, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-57", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.02, "cache_hit": true}
+INFO:     10.244.0.29:38854 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845680045, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-57", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.02, "cache_hit": true, "parts": 1, "ttfc_ms": 16.048, "elapsed_ms": 16.462}
+INFO:     10.244.0.1:37666 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845680529, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-58", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.021, "cache_hit": true}
+INFO:     10.244.0.29:38862 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845680545, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-58", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.021, "cache_hit": true, "parts": 1, "ttfc_ms": 15.901, "elapsed_ms": 16.377}
+INFO:     10.244.0.1:37680 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845681029, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-59", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.023, "cache_hit": true}
+INFO:     10.244.0.29:38876 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845681046, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-59", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.023, "cache_hit": true, "parts": 1, "ttfc_ms": 16.425, "elapsed_ms": 16.79}
+INFO:     10.244.0.1:37686 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845682029, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-61", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.015, "cache_hit": true}
+INFO:     10.244.0.29:38894 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845682045, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-61", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.015, "cache_hit": true, "parts": 1, "ttfc_ms": 16.013, "elapsed_ms": 16.359}
+INFO:     10.244.0.29:38896 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845682537, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-62", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.035, "cache_hit": true}
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845682556, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-62", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.035, "cache_hit": true, "parts": 1, "ttfc_ms": 18.751, "elapsed_ms": 19.97}
+INFO:     10.244.0.1:37696 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845683028, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-63", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.29:38902 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845683044, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-63", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 1, "ttfc_ms": 15.629, "elapsed_ms": 15.842}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845683530, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-64", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.018, "cache_hit": true}
+INFO:     10.244.0.29:38912 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845683546, "pod": "hw11-a-559b8b4746-p85fg", "version": "A", "backend_mode": "simulated", "request_id": "a-early-64", "session_id": null, "client_ip": "10.244.0.29", "warmed": true, "queue_ms": 0.018, "cache_hit": true, "parts": 1, "ttfc_ms": 15.699, "elapsed_ms": 16.035}

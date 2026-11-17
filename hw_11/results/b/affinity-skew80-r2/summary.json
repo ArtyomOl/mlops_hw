@@ -1,0 +1,169 @@
+{
+  "all": {
+    "planned": 720,
+    "sent": 720,
+    "completed": 618,
+    "rejected": 102,
+    "aborted": 0,
+    "timeout": 0,
+    "not_sent": 0,
+    "other_error": 0,
+    "error_fraction": 0.14166666666666666,
+    "timeout_fraction": 0.0,
+    "statuses": {
+      "200": 618,
+      "429": 102
+    },
+    "warmup_incomplete": 0,
+    "cache_hits": 606,
+    "cache_misses": 12,
+    "ttfc_ms": {
+      "n": 618,
+      "p50": 766.9135,
+      "p95": 882.3613
+    },
+    "e2e_ms": {
+      "n": 618,
+      "p50": 969.7502,
+      "p95": 1086.6371
+    },
+    "queue_ms": {
+      "n": 618,
+      "p50": 750.394,
+      "p95": 866.293
+    },
+    "send_late_ms": {
+      "n": 720,
+      "p50": 1.9743,
+      "p95": 4.8099
+    },
+    "inter_chunk_ms": {
+      "n": 2472,
+      "p50": 50.7167,
+      "p95": 52.034
+    }
+  },
+  "by_pod": {
+    "hw11-b2-564889954f-4ql7q": {
+      "planned": 72,
+      "sent": 72,
+      "completed": 72,
+      "rejected": 0,
+      "aborted": 0,
+      "timeout": 0,
+      "not_sent": 0,
+      "other_error": 0,
+      "error_fraction": 0.0,
+      "timeout_fraction": 0.0,
+      "statuses": {
+        "200": 72
+      },
+      "warmup_incomplete": 0,
+      "cache_hits": 66,
+      "cache_misses": 6,
+      "ttfc_ms": {
+        "n": 72,
+        "p50": 16.5074,
+        "p95": 102.9956
+      },
+      "e2e_ms": {
+        "n": 72,
+        "p50": 220.0572,
+        "p95": 308.3638
+      },
+      "queue_ms": {
+        "n": 72,
+        "p50": 0.014,
+        "p95": 0.098
+      },
+      "send_late_ms": {
+        "n": 72,
+        "p50": 3.7664,
+        "p95": 7.3371
+      },
+      "inter_chunk_ms": {
+        "n": 288,
+        "p50": 50.6571,
+        "p95": 52.1642
+      }
+    },
+    "hw11-b2-564889954f-z99jp": {
+      "planned": 648,
+      "sent": 648,
+      "completed": 546,
+      "rejected": 102,
+      "aborted": 0,
+      "timeout": 0,
+      "not_sent": 0,
+      "other_error": 0,
+      "error_fraction": 0.1574074074074074,
+      "timeout_fraction": 0.0,
+      "statuses": {
+        "200": 546,
+        "429": 102
+      },
+      "warmup_incomplete": 0,
+      "cache_hits": 540,
+      "cache_misses": 6,
+      "ttfc_ms": {
+        "n": 546,
+        "p50": 781.3665,
+        "p95": 884.0373
+      },
+      "e2e_ms": {
+        "n": 546,
+        "p50": 984.849,
+        "p95": 1087.2088
+      },
+      "queue_ms": {
+        "n": 546,
+        "p50": 764.813,
+        "p95": 867.424
+      },
+      "send_late_ms": {
+        "n": 648,
+        "p50": 1.8479,
+        "p95": 4.1473
+      },
+      "inter_chunk_ms": {
+        "n": 2184,
+        "p50": 50.7236,
+        "p95": 52.006
+      }
+    }
+  },
+  "client_to_pod": {
+    "hw11-load-0": {
+      "hw11-b2-564889954f-z99jp": 576
+    },
+    "hw11-load-1": {
+      "hw11-b2-564889954f-z99jp": 72
+    },
+    "hw11-load-2": {
+      "hw11-b2-564889954f-4ql7q": 36
+    },
+    "hw11-load-3": {
+      "hw11-b2-564889954f-4ql7q": 36
+    }
+  },
+  "source_addresses_seen": [
+    "10.244.0.17",
+    "10.244.0.19",
+    "10.244.0.21",
+    "10.244.0.24"
+  ],
+  "trial": {
+    "trial": "affinity-skew80-r2",
+    "policy": "affinity",
+    "profile": "skew80",
+    "duration_s": 120,
+    "rps": 6,
+    "start_at_unix_s": 1794845797.066143,
+    "stop_dispatch_at_unix_s": 1794845917.066143,
+    "namespace": "hw11-b2",
+    "initial_cache": "empty after quiescent scale to zero and replacement",
+    "http": "HTTP/1.1 Connection: close",
+    "service_url": "http://hw11-b2-affinity",
+    "requested_mix": "80/20"
+  }
+}

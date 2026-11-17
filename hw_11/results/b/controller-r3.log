@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_11/experiments/experiment_b.py", line 149, in <module>
+    main()
+    ~~~~^^
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_11/experiments/experiment_b.py", line 142, in main
+    data = experiment(cluster, args.out, trial, policy, profile, args.duration, args.rps,
+                      reset=True)
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_11/experiments/experiment_b.py", line 59, in experiment
+    cluster.kubectl('rollout', 'status', 'deployment/' + cluster.release, '--timeout=90s', timeout=96)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/artyom-olenev/Projects/mlops_hw/hw_11/experiments/cluster.py", line 25, in kubectl
+    return subprocess.run(
+           ~~~~~~~~~~~~~~^
+        ['kubectl', '--context', self.context, '-n', self.namespace, *args],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        input=data, check=check, text=True, capture_output=True, timeout=timeout,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).stdout
+    ^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.0_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['kubectl', '--context', 'kind-hw11', '-n', 'hw11-b3', 'rollout', 'status', 'deployment/hw11-b3', '--timeout=90s']' returned non-zero exit status 1.
+ordinary-uniform-r3: 120s, 6 requests/s, http://hw11-b3
+ordinary-uniform-r3: 720/720 completed; TTFC p95 281.8904 ms; hw11-b3-866c75ddd5-9d47t=351, hw11-b3-866c75ddd5-wtwj2=369
+affinity-uniform-r3: 120s, 6 requests/s, http://hw11-b3-affinity
+affinity-uniform-r3: 720/720 completed; TTFC p95 613.9733 ms; hw11-b3-866c75ddd5-gvtvq=540, hw11-b3-866c75ddd5-pc5m9=180
+affinity-skew80-r3: 120s, 6 requests/s, http://hw11-b3-affinity
+affinity-skew80-r3: 690/720 completed; TTFC p95 855.2415 ms; hw11-b3-866c75ddd5-5l7qp=144, hw11-b3-866c75ddd5-8m4pn=576
+ordinary-skew80-r3: 120s, 6 requests/s, http://hw11-b3
+ordinary-skew80-r3: 720/720 completed; TTFC p95 287.6917 ms; hw11-b3-866c75ddd5-tm8p9=340, hw11-b3-866c75ddd5-whwlp=380

@@ -1,0 +1,376 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     {"event": "artifact_loaded", "ts_unix_ms": 1794845789749, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "model_sha256": "dd3167b4db9e15d2fab00c3a172aee9c248c8963081155f393944faf3f463626"}
+INFO:     {"event": "warmup_started", "ts_unix_ms": 1794845789749, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "seconds": 1.0, "probe_mode": "correct"}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     {"event": "warmup_finished", "ts_unix_ms": 1794845790750, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "ready": true}
+INFO:     10.244.0.1:41182 - "GET /startup HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41196 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41202 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41214 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41224 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41238 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:36936 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:36940 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845797084, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00000", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.098, "cache_hit": false}
+INFO:     10.244.0.21:55330 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:36952 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845797398, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00000", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.098, "cache_hit": false, "parts": 5, "ttfc_ms": 110.728, "elapsed_ms": 313.54}
+INFO:     10.244.0.1:36966 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845798744, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00010", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.021, "cache_hit": false}
+INFO:     10.244.0.24:55938 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:36976 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845799054, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00010", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.021, "cache_hit": false, "parts": 5, "ttfc_ms": 102.198, "elapsed_ms": 310.871}
+INFO:     10.244.0.1:36980 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:36992 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845801070, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00024", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.052, "cache_hit": true}
+INFO:     10.244.0.21:55340 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845801290, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00024", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.052, "cache_hit": true, "parts": 5, "ttfc_ms": 16.034, "elapsed_ms": 219.609}
+INFO:     10.244.0.1:37000 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845802240, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00031", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.027, "cache_hit": false}
+INFO:     10.244.0.24:55950 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:37012 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845802548, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00031", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.027, "cache_hit": false, "parts": 5, "ttfc_ms": 101.577, "elapsed_ms": 307.177}
+INFO:     10.244.0.1:37024 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845803904, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00041", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.021, "cache_hit": true}
+INFO:     10.244.0.24:55956 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:37030 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845804122, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00041", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.021, "cache_hit": true, "parts": 5, "ttfc_ms": 16.358, "elapsed_ms": 218.539}
+INFO:     10.244.0.1:37034 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845805071, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00048", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.026, "cache_hit": false}
+INFO:     10.244.0.21:47656 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41628 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845805375, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00048", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.026, "cache_hit": false, "parts": 5, "ttfc_ms": 101.315, "elapsed_ms": 304.635}
+INFO:     10.244.0.1:41634 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845807235, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00061", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.015, "cache_hit": true}
+INFO:     10.244.0.24:49480 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41640 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845807455, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00061", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.015, "cache_hit": true, "parts": 5, "ttfc_ms": 15.569, "elapsed_ms": 219.82}
+INFO:     10.244.0.1:41654 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41670 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41672 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845809737, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00076", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.016, "cache_hit": false}
+INFO:     10.244.0.21:47660 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845810046, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00076", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.016, "cache_hit": false, "parts": 5, "ttfc_ms": 103.477, "elapsed_ms": 309.392}
+INFO:     10.244.0.1:41682 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845810403, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00080", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.025, "cache_hit": false}
+INFO:     10.244.0.21:47666 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845810710, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00080", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.025, "cache_hit": false, "parts": 5, "ttfc_ms": 101.612, "elapsed_ms": 307.891}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845811072, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00084", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.029, "cache_hit": true}
+INFO:     10.244.0.24:49496 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845811295, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00084", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.029, "cache_hit": true, "parts": 5, "ttfc_ms": 15.955, "elapsed_ms": 223.946}
+INFO:     10.244.0.1:41688 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41702 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41716 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41720 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41730 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845814741, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00106", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.024, "cache_hit": true}
+INFO:     10.244.0.21:47682 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845814964, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00106", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.024, "cache_hit": true, "parts": 5, "ttfc_ms": 16.956, "elapsed_ms": 222.851}
+INFO:     10.244.0.1:50512 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845815571, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00111", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.014, "cache_hit": true}
+INFO:     10.244.0.24:45812 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845815791, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00111", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.014, "cache_hit": true, "parts": 5, "ttfc_ms": 16.276, "elapsed_ms": 219.848}
+INFO:     10.244.0.1:50514 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50528 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50544 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50552 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50566 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845819739, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00136", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.24:45828 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845819963, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00136", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 5, "ttfc_ms": 16.827, "elapsed_ms": 223.83}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845820240, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00139", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.21:56138 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50578 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845820461, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00139", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.613, "elapsed_ms": 221.152}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845820461, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00140", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 59.407, "cache_hit": true}
+INFO:     10.244.0.24:45830 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845820682, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00140", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 59.407, "cache_hit": true, "parts": 5, "ttfc_ms": 75.518, "elapsed_ms": 280.103}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845821234, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00145", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true}
+INFO:     10.244.0.21:56146 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50588 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845821453, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00145", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true, "parts": 5, "ttfc_ms": 15.72, "elapsed_ms": 218.665}
+INFO:     10.244.0.1:50594 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50604 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50606 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:50612 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:34638 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845826074, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00174", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.21:60620 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845826293, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00174", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 15.649, "elapsed_ms": 219.247}
+INFO:     10.244.0.1:34648 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845826571, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00177", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.24:52108 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845826790, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00177", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 5, "ttfc_ms": 16.438, "elapsed_ms": 218.863}
+INFO:     10.244.0.1:34660 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:34668 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845828403, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00188", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.015, "cache_hit": true}
+INFO:     10.244.0.21:60636 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845828623, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00188", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.015, "cache_hit": true, "parts": 5, "ttfc_ms": 16.187, "elapsed_ms": 220.454}
+INFO:     10.244.0.1:34674 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:34688 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845829905, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00197", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.24:52114 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845830124, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00197", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 5, "ttfc_ms": 15.497, "elapsed_ms": 218.878}
+INFO:     10.244.0.1:34704 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:34720 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845831903, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00209", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.24:52116 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845832124, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00209", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.727, "elapsed_ms": 220.983}
+INFO:     10.244.0.1:34724 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845832571, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00213", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.21:60642 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845832790, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00213", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.99, "elapsed_ms": 219.715}
+INFO:     10.244.0.1:34736 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:34738 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:34742 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:49174 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:49188 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845836572, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00237", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.24:58288 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845836792, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00237", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.869, "elapsed_ms": 220.225}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845836792, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00238", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 57.004, "cache_hit": true}
+INFO:     10.244.0.21:51270 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845837012, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00238", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 57.004, "cache_hit": true, "parts": 5, "ttfc_ms": 74.76, "elapsed_ms": 276.767}
+INFO:     10.244.0.1:49198 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:49214 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:49218 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845839236, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00253", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.21:51276 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:49226 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845839453, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00253", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 5, "ttfc_ms": 15.498, "elapsed_ms": 217.292}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845840070, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00258", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.24:58292 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845840294, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00258", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 16.589, "elapsed_ms": 223.254}
+INFO:     10.244.0.1:49232 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:49244 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845841739, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00268", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.015, "cache_hit": true}
+INFO:     10.244.0.21:51288 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845841962, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00268", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.015, "cache_hit": true, "parts": 5, "ttfc_ms": 15.74, "elapsed_ms": 222.491}
+INFO:     10.244.0.1:49248 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:49260 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845843571, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00279", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.24:58304 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845843793, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00279", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.802, "elapsed_ms": 222.098}
+INFO:     10.244.0.1:49268 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:49282 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845844904, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00287", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.021, "cache_hit": true}
+INFO:     10.244.0.24:58310 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845845121, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00287", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.021, "cache_hit": true, "parts": 5, "ttfc_ms": 15.813, "elapsed_ms": 217.788}
+INFO:     10.244.0.1:56878 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845846072, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00294", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.015, "cache_hit": true}
+INFO:     10.244.0.21:43278 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845846291, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00294", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.015, "cache_hit": true, "parts": 5, "ttfc_ms": 15.939, "elapsed_ms": 219.703}
+INFO:     10.244.0.1:56884 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:56886 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845848072, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00306", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.21:43284 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845848293, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00306", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 5, "ttfc_ms": 16.899, "elapsed_ms": 221.824}
+INFO:     10.244.0.1:56902 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845848905, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00311", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.015, "cache_hit": true}
+INFO:     10.244.0.24:37138 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:56910 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845849124, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00311", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.015, "cache_hit": true, "parts": 5, "ttfc_ms": 15.648, "elapsed_ms": 218.954}
+INFO:     10.244.0.1:56912 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:56918 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845850736, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00322", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.015, "cache_hit": true}
+INFO:     10.244.0.21:43288 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845850955, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00322", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.015, "cache_hit": true, "parts": 5, "ttfc_ms": 16.095, "elapsed_ms": 218.816}
+INFO:     10.244.0.1:56930 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845851737, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00328", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.025, "cache_hit": true}
+INFO:     10.244.0.24:37144 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845851958, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00328", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.025, "cache_hit": true, "parts": 5, "ttfc_ms": 16.023, "elapsed_ms": 220.436}
+INFO:     10.244.0.1:56946 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:56952 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:56954 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845854070, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00342", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.016, "cache_hit": true}
+INFO:     10.244.0.24:37150 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845854288, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00342", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.016, "cache_hit": true, "parts": 5, "ttfc_ms": 16.393, "elapsed_ms": 217.866}
+INFO:     10.244.0.1:56956 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:52862 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:52866 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845856903, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00359", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.024, "cache_hit": true}
+INFO:     10.244.0.21:44456 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845857123, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00359", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.024, "cache_hit": true, "parts": 5, "ttfc_ms": 16.752, "elapsed_ms": 220.307}
+INFO:     10.244.0.1:52880 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845857901, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00365", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.21:44470 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845858122, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00365", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 16.403, "elapsed_ms": 221.12}
+INFO:     10.244.0.1:52896 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:52912 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:52916 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845859904, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00377", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.036, "cache_hit": true}
+INFO:     10.244.0.24:58050 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845860126, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00377", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.036, "cache_hit": true, "parts": 5, "ttfc_ms": 17.26, "elapsed_ms": 221.531}
+INFO:     10.244.0.1:52926 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845861070, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00384", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.021, "cache_hit": true}
+INFO:     10.244.0.24:58054 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845861289, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00384", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.021, "cache_hit": true, "parts": 5, "ttfc_ms": 15.661, "elapsed_ms": 219.024}
+INFO:     10.244.0.1:52932 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:52934 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845862736, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00394", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.21:44472 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845862955, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00394", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 15.531, "elapsed_ms": 219.295}
+INFO:     10.244.0.1:52940 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:52944 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:52960 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845864570, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00405", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.023, "cache_hit": true}
+INFO:     10.244.0.21:44474 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845864788, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00405", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.023, "cache_hit": true, "parts": 5, "ttfc_ms": 15.783, "elapsed_ms": 217.954}
+INFO:     10.244.0.1:41356 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845865573, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00411", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.014, "cache_hit": true}
+INFO:     10.244.0.24:59348 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845865792, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00411", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.014, "cache_hit": true, "parts": 5, "ttfc_ms": 16.182, "elapsed_ms": 219.228}
+INFO:     10.244.0.1:41362 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41366 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845868236, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00427", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.24:59350 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41368 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845868455, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00427", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.481, "elapsed_ms": 218.597}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845868570, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00429", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.21:36794 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845868788, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00429", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 5, "ttfc_ms": 15.655, "elapsed_ms": 217.834}
+INFO:     10.244.0.1:41380 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41388 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41402 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845870736, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00442", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true}
+INFO:     10.244.0.21:36804 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845870954, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00442", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true, "parts": 5, "ttfc_ms": 15.555, "elapsed_ms": 217.364}
+INFO:     10.244.0.1:41404 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845871571, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00447", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.01, "cache_hit": true}
+INFO:     10.244.0.24:59354 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845871790, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00447", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.01, "cache_hit": true, "parts": 5, "ttfc_ms": 15.54, "elapsed_ms": 218.27}
+INFO:     10.244.0.1:41420 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41432 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:41438 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845874070, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00462", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.24:59366 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845874292, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00462", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 17.239, "elapsed_ms": 221.871}
+INFO:     10.244.0.1:41440 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:47418 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845875406, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00470", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.21:49934 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845875624, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00470", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.483, "elapsed_ms": 218.083}
+INFO:     10.244.0.1:47424 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845877236, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00481", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.24:34824 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:47438 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845877456, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00481", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 15.526, "elapsed_ms": 219.654}
+INFO:     10.244.0.1:47448 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:47458 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:47460 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845879407, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00494", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true}
+INFO:     10.244.0.21:49946 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845879625, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00494", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true, "parts": 5, "ttfc_ms": 15.511, "elapsed_ms": 217.891}
+INFO:     10.244.0.1:47464 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:47474 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845882073, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00510", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.24:34832 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845882293, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00510", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 16.487, "elapsed_ms": 220.135}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845882293, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00511", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 55.785, "cache_hit": true}
+INFO:     10.244.0.21:49958 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:47486 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845882514, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00511", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 55.785, "cache_hit": true, "parts": 5, "ttfc_ms": 71.815, "elapsed_ms": 276.378}
+INFO:     10.244.0.1:47502 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845883905, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00521", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true}
+INFO:     10.244.0.21:49972 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:47516 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845884123, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00521", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true, "parts": 5, "ttfc_ms": 15.638, "elapsed_ms": 217.69}
+INFO:     10.244.0.1:47522 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845884903, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00527", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.023, "cache_hit": true}
+INFO:     10.244.0.24:34838 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845885123, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00527", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.023, "cache_hit": true, "parts": 5, "ttfc_ms": 15.959, "elapsed_ms": 219.317}
+INFO:     10.244.0.1:40518 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:40532 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:40548 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845888237, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00547", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.21:36990 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:40564 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845888459, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00547", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.852, "elapsed_ms": 221.836}
+INFO:     10.244.0.1:40578 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:40594 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845889905, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00557", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.24:46366 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845890124, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00557", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 16.075, "elapsed_ms": 218.149}
+INFO:     10.244.0.1:40600 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845890570, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00561", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true}
+INFO:     10.244.0.21:37002 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845890788, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00561", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true, "parts": 5, "ttfc_ms": 15.656, "elapsed_ms": 218.351}
+INFO:     10.244.0.1:40612 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845892070, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00570", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.027, "cache_hit": true}
+INFO:     10.244.0.24:46370 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845892292, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00570", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.027, "cache_hit": true, "parts": 5, "ttfc_ms": 17.297, "elapsed_ms": 221.596}
+INFO:     10.244.0.1:40622 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:40626 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:40642 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:40644 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845894570, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00585", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.24:46376 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845894788, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00585", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.572, "elapsed_ms": 217.358}
+INFO:     10.244.0.1:46778 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845895739, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00592", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.21:39784 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845895959, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00592", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 15.696, "elapsed_ms": 220.293}
+INFO:     10.244.0.1:46788 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845897069, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00600", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.21:39790 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845897289, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00600", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 15.783, "elapsed_ms": 220.045}
+INFO:     10.244.0.1:46792 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845897738, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00604", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.24:56692 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845897955, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00604", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 15.971, "elapsed_ms": 217.903}
+INFO:     10.244.0.1:46808 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:46818 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:46820 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:46830 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:46838 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845901570, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00627", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true}
+INFO:     10.244.0.24:56706 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845901791, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00627", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.013, "cache_hit": true, "parts": 5, "ttfc_ms": 15.498, "elapsed_ms": 220.75}
+INFO:     10.244.0.21:39794 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845902072, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00630", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true}
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845902290, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00630", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.014, "cache_hit": true, "parts": 5, "ttfc_ms": 15.675, "elapsed_ms": 217.63}
+INFO:     10.244.0.1:46846 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:46852 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:46860 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:46876 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845904903, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00647", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.24:56716 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845905122, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00647", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 17.061, "elapsed_ms": 219.141}
+INFO:     10.244.0.1:38100 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.21:50862 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845906071, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00654", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.017, "cache_hit": true}
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845906290, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00654", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.017, "cache_hit": true, "parts": 5, "ttfc_ms": 15.671, "elapsed_ms": 218.203}
+INFO:     10.244.0.1:38106 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:38116 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:38126 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845908570, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00669", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.016, "cache_hit": true}
+INFO:     10.244.0.21:50870 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845908788, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00669", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.016, "cache_hit": true, "parts": 5, "ttfc_ms": 15.507, "elapsed_ms": 217.953}
+INFO:     10.244.0.1:38138 - "GET /health HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845909235, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00673", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.24:51892 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:38150 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845909453, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00673", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 16.002, "elapsed_ms": 218.171}
+INFO:     10.244.0.1:38166 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:38182 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845912238, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00691", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.21:50874 - "POST /generate HTTP/1.1" 200 OK
+INFO:     10.244.0.1:38196 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845912459, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00691", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 5, "ttfc_ms": 15.464, "elapsed_ms": 220.456}
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845912737, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00694", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.24:51900 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845912956, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00694", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 5, "ttfc_ms": 15.57, "elapsed_ms": 218.268}
+INFO:     10.244.0.1:38202 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:38216 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:38232 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845914736, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00706", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true}
+INFO:     10.244.0.24:51902 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845914957, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00706", "session_id": null, "client_ip": "10.244.0.24", "warmed": true, "queue_ms": 0.011, "cache_hit": true, "parts": 5, "ttfc_ms": 16.483, "elapsed_ms": 220.532}
+INFO:     10.244.0.1:46676 - "GET /ready HTTP/1.1" 200 OK
+INFO:     {"event": "request_admitted", "ts_unix_ms": 1794845916071, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00714", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true}
+INFO:     10.244.0.21:33832 - "POST /generate HTTP/1.1" 200 OK
+INFO:     {"event": "request_completed", "ts_unix_ms": 1794845916290, "pod": "hw11-b2-564889954f-4ql7q", "version": "A", "backend_mode": "simulated", "request_id": "affinity-skew80-r2-00714", "session_id": null, "client_ip": "10.244.0.21", "warmed": true, "queue_ms": 0.012, "cache_hit": true, "parts": 5, "ttfc_ms": 16.069, "elapsed_ms": 218.82}
+INFO:     10.244.0.1:46684 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:46694 - "GET /ready HTTP/1.1" 200 OK

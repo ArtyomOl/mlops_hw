@@ -1,0 +1,14 @@
+{
+  "trial": "affinity-skew80-r3",
+  "policy": "affinity",
+  "profile": "skew80",
+  "duration_s": 120,
+  "rps": 6,
+  "start_at_unix_s": 1794845932.148344,
+  "stop_dispatch_at_unix_s": 1794846052.148344,
+  "namespace": "hw11-b3",
+  "initial_cache": "empty after quiescent scale to zero and replacement",
+  "http": "HTTP/1.1 Connection: close",
+  "service_url": "http://hw11-b3-affinity",
+  "requested_mix": "80/20"
+}

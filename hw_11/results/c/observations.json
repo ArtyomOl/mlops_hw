@@ -1,0 +1,101 @@
+{
+  "desired_changes": [
+    {
+      "ts_wall_s": 1794845822.0182168,
+      "replicas": 2,
+      "phase": "baseline"
+    },
+    {
+      "ts_wall_s": 1794845894.070818,
+      "replicas": 3,
+      "phase": "hot-scale-up"
+    },
+    {
+      "ts_wall_s": 1794846134.258216,
+      "replicas": 2,
+      "phase": "recover-scale-down"
+    }
+  ],
+  "ready_changes": [
+    {
+      "ts_wall_s": 1794845822.0182168,
+      "replicas": 2,
+      "phase": "baseline"
+    },
+    {
+      "ts_wall_s": 1794845910.08432,
+      "replicas": 3,
+      "phase": "hot-scale-up"
+    },
+    {
+      "ts_wall_s": 1794846134.258216,
+      "replicas": 2,
+      "phase": "recover-scale-down"
+    }
+  ],
+  "first_seen_pods": {
+    "hw11-c-7976675586-h7hgl": {
+      "observed_at": 1794845822.0182168,
+      "created": "2026-11-16T16:14:27Z"
+    },
+    "hw11-c-7976675586-jkcc5": {
+      "observed_at": 1794845822.0182168,
+      "created": "2026-11-16T16:14:42Z"
+    },
+    "hw11-c-7976675586-z2vbh": {
+      "observed_at": 1794845894.070818,
+      "created": "2026-11-16T16:18:12Z"
+    }
+  },
+  "first_ready_pods": {
+    "hw11-c-7976675586-h7hgl": "2026-11-16T16:14:41Z",
+    "hw11-c-7976675586-jkcc5": "2026-11-16T16:14:56Z",
+    "hw11-c-7976675586-z2vbh": "2026-11-16T16:18:26Z"
+  },
+  "alerts": {
+    "HighTTFC": [
+      {
+        "ts_wall_s": 1794845822.0182168,
+        "state": "inactive",
+        "phase": "baseline"
+      },
+      {
+        "ts_wall_s": 1794845874.051776,
+        "state": "pending",
+        "phase": "hot-scale-up"
+      },
+      {
+        "ts_wall_s": 1794845890.065842,
+        "state": "firing",
+        "phase": "hot-scale-up"
+      },
+      {
+        "ts_wall_s": 1794846050.181449,
+        "state": "inactive",
+        "phase": "recover-scale-down"
+      }
+    ],
+    "HighRejectRatio": [
+      {
+        "ts_wall_s": 1794845822.0182168,
+        "state": "inactive",
+        "phase": "baseline"
+      },
+      {
+        "ts_wall_s": 1794845874.051776,
+        "state": "pending",
+        "phase": "hot-scale-up"
+      },
+      {
+        "ts_wall_s": 1794845890.065842,
+        "state": "firing",
+        "phase": "hot-scale-up"
+      },
+      {
+        "ts_wall_s": 1794846046.180158,
+        "state": "inactive",
+        "phase": "recover-scale-down"
+      }
+    ]
+  }
+}

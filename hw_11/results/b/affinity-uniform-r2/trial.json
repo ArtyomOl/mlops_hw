@@ -1,0 +1,14 @@
+{
+  "trial": "affinity-uniform-r2",
+  "policy": "affinity",
+  "profile": "uniform",
+  "duration_s": 120,
+  "rps": 6,
+  "start_at_unix_s": 1794845932.593077,
+  "stop_dispatch_at_unix_s": 1794846052.593077,
+  "namespace": "hw11-b2",
+  "initial_cache": "empty after quiescent scale to zero and replacement",
+  "http": "HTTP/1.1 Connection: close",
+  "service_url": "http://hw11-b2-affinity",
+  "requested_mix": "25/25/25/25"
+}
